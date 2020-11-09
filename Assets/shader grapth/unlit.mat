@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: unlit
+  m_Shader: {fileID: -6465566751694194690, guid: 7581ca55e0a5ead42b793a09178ba3c6,
+    type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_B41E9A91:
+        m_Texture: {fileID: 2800000, guid: 449799a41fb5d6742a17d0308041eae8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_12135B19_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a4898e26a2a1e0046a7c6ace271735bf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_47F01928: 0.204
+    - Vector1_A9F54AF7: 2.5
+    - Vector1_CD5E56F: 30
+    - Vector1_D5358A31: 35
+    m_Colors:
+    - Color_B7403B67: {r: 6.6384807, g: 4.3525887, b: 5.066008, a: 1}
