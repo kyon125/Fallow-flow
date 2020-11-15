@@ -8,6 +8,8 @@ TagManager:
   - road
   - add_1
   - core
+  - s1
+  - s2
   layers:
   - Default
   - TransparentFX
