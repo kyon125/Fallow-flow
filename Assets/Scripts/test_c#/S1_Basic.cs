@@ -21,9 +21,13 @@ public class S1_Basic : MonoBehaviour
     public float F2_time;
     [Header("橫移速度")]
     public float speed;
+    [Header("相機")]
+    public CinemachineTrackedDolly dolly;
+    public CinemachineVirtualCamera cine;
+
     void Start()
     {
-        
+        dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
     }
 
     // Update is called once per frame
@@ -48,10 +52,17 @@ public class S1_Basic : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
+            DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 0f, 0.1f);
+
+
+                Invoke("restore", 1.0f);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 2.0f, 0.1f);
+
+                Invoke("restore", 1.0f);
         }
     }
     public void go_foword()
@@ -83,6 +94,11 @@ public class S1_Basic : MonoBehaviour
                     break;
                 }
         }
+    }
+
+    private void restore()
+    {
+        DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 1, 1.2f);
     }
 }
 
