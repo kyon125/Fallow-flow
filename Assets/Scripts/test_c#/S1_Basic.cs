@@ -21,6 +21,13 @@ public class S1_Basic : MonoBehaviour
     public float F2_time;
     [Header("橫移速度")]
     public float speed;
+    [Header("剛體")]
+    public playStatus Status;
+    public GameObject camerafallow;
+    public bool isground;
+    public Rigidbody rb;
+    public float jump_speed;
+    public float g;
     [Header("相機")]
     public CinemachineTrackedDolly dolly;
     public CinemachineVirtualCamera cine;
@@ -28,6 +35,7 @@ public class S1_Basic : MonoBehaviour
     void Start()
     {
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
+        Status = playStatus.third;
     }
 
     // Update is called once per frame
@@ -36,6 +44,18 @@ public class S1_Basic : MonoBehaviour
         time += Time.deltaTime;
         start_Game();
         v_move();
+        if (Status == playStatus.two)
+        {
+            rb.useGravity = false;
+        }
+        else
+        {
+            rb.useGravity = true;
+        }
+        if (isground == false && Status == playStatus.two)
+        {            
+            rb.AddForce(new Vector3(0, -g, 0));
+        }              
     }
     void start_Game()
     {
@@ -45,7 +65,7 @@ public class S1_Basic : MonoBehaviour
             go_foword();
             action = true;
             time = 0;           
-        }
+        }        
     }
     void v_move()
     {
@@ -55,14 +75,21 @@ public class S1_Basic : MonoBehaviour
             DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 0f, 0.1f);
 
 
-                Invoke("restore", 1.0f);
+            Invoke("restore", 1.0f);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 2.0f, 0.1f);
 
-                Invoke("restore", 1.0f);
+            Invoke("restore", 1.0f);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && Status == playStatus.two)
+        {
+            if (isground == true)
+            {
+                rb.AddForce(Vector3.up * jump_speed);
+            }            
         }
     }
     public void go_foword()
@@ -70,6 +97,7 @@ public class S1_Basic : MonoBehaviour
         transform.DOKill();
         print("0");
         transform.DOBlendableMoveBy(new Vector3(F, 0, 0), F_time).SetEase(Ease.Linear);
+        camerafallow.transform.DOBlendableMoveBy(new Vector3(F, 0, 0), F_time).SetEase(Ease.Linear);
     }
     public void go_foword2()
     {
@@ -95,10 +123,28 @@ public class S1_Basic : MonoBehaviour
                 }
         }
     }
-
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.transform.tag == "road")
+        {
+            isground = true;
+        }                    
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.tag == "road")
+        {
+            isground = false;
+        }        
+    }
     private void restore()
     {
         DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 1, 1.2f);
+    }
+    public enum playStatus
+    {
+        third,
+        two
     }
 }
 
