@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class S1_Basic : MonoBehaviour
 {
@@ -31,11 +32,15 @@ public class S1_Basic : MonoBehaviour
     [Header("相機")]
     public CinemachineTrackedDolly dolly;
     public CinemachineVirtualCamera cine;
+    [Header("類別")]
+    int dead;
 
     void Start()
     {
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         Status = playStatus.third;
+
+        dead = LayerMask.NameToLayer("Dead");
     }
 
     // Update is called once per frame
@@ -124,6 +129,12 @@ public class S1_Basic : MonoBehaviour
                     transform.DOBlendableMoveBy(new Vector3(F2, 0, 0), F2_time).SetEase(Ease.Linear);
                     break;
                 }
+        }
+
+        if(other.gameObject.layer==dead)
+        {
+            print("888888888888");
+            SceneManager.LoadScene("End");
         }
     }
     private void OnCollisionStay(Collision collision)
