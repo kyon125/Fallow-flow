@@ -40,10 +40,9 @@ public class S1_Basic : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {            
+    {
         time += Time.deltaTime;
         start_Game();
-        v_move();
         if (Status == playStatus.two)
         {
             rb.useGravity = false;
@@ -52,10 +51,21 @@ public class S1_Basic : MonoBehaviour
         {
             rb.useGravity = true;
         }
+        if (Input.GetKeyDown(KeyCode.Space) && Status == playStatus.two)
+        {
+            if (isground == true)
+            {
+                rb.AddForce(Vector3.up * jump_speed);
+            }
+        }
+    }
+    private void FixedUpdate()
+    {        
+        v_move();        
         if (isground == false && Status == playStatus.two)
-        {            
+        {
             rb.AddForce(new Vector3(0, -g, 0));
-        }              
+        }
     }
     void start_Game()
     {
@@ -83,14 +93,7 @@ public class S1_Basic : MonoBehaviour
             DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 2.0f, 0.1f);
 
             Invoke("restore", 1.0f);
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && Status == playStatus.two)
-        {
-            if (isground == true)
-            {
-                rb.AddForce(Vector3.up * jump_speed);
-            }            
-        }
+        }        
     }
     public void go_foword()
     {

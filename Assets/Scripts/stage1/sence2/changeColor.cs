@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+using UnityEngine.Rendering;
 
 public class changeColor : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject red, blue;
+    public VolumeProfile rp, bp;
     public Material M_red, M_blue, M_start;
     public status show;
+
+    public Cinemachine.PostFX.CinemachineVolumeSettings cine;
+    
     void Start()
     {
         
@@ -41,13 +47,15 @@ public class changeColor : MonoBehaviour
     }
     void showblue()
     {
-        RenderSettings.skybox = M_blue;
+        //RenderSettings.skybox = M_blue;
+        cine.m_Profile = bp;
         red.SetActive(false);
         blue.SetActive(true);
     }
     void showred()
     {
-        RenderSettings.skybox = M_red;
+        //RenderSettings.skybox = M_red;
+        cine.m_Profile = rp;
         red.SetActive(true);
         blue.SetActive(false);
     }
