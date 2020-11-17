@@ -6,6 +6,7 @@ public class addItem : MonoBehaviour
 {
     // Start is called before the first frame update
     public AudioSource ad;
+    public GameObject PS;
     void Start()
     {
         
@@ -19,6 +20,7 @@ public class addItem : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         ad.Play();
+        Instantiate(PS , transform.position , Quaternion.identity);
         Destroy(this.gameObject);
     }    
 }
