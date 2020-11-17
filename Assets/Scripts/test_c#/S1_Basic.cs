@@ -90,14 +90,14 @@ public class S1_Basic : MonoBehaviour
             DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 0f, 0.1f);
 
 
-            Invoke("restore", 1.0f);
+            Invoke("restore", 0.5f);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 2.0f, 0.1f);
 
-            Invoke("restore", 1.0f);
+            Invoke("restore", 0.5f);
         }        
     }
     public void go_foword()
