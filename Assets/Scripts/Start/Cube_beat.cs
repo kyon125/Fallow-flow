@@ -67,7 +67,7 @@ public class Cube_beat : MonoBehaviour
 
         m_player.SetColor("_BaseColor", cubeColor[changetime]);
         player.material = m_player ;
-        if (changetime == 4)
+        if (changetime == textColor.Count - 1)
         {
             changetime = -1;
         }
