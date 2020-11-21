@@ -12,6 +12,7 @@ TagManager:
   - s2
   - wall
   - deadwall
+  - tetrisCube
   layers:
   - Default
   - TransparentFX
