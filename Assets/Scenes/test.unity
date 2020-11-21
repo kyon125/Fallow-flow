@@ -883,8 +883,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ff075319d13d0e7478aa66d3a9eeb6dc, type: 3}
-    m_FontSize: 150
+    m_Font: {fileID: 12800000, guid: 9b3dfe39bc93c4b4a98f13b53b817e29, type: 3}
+    m_FontSize: 125
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   - {r: 0.7019608, g: 1, b: 0.7372549, a: 1}
   - {r: 1, g: 0.6861329, b: 0.6556604, a: 1}
   - {r: 0.8065224, g: 0.7122642, b: 1, a: 1}
-  - {r: 0.06915275, g: 0.0046724807, b: 0.1981132, a: 1}
+  - {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 1}
   m_background: {fileID: 2100000, guid: 1ab99f0566689534292a6ac28bd2517f, type: 2}
   backColor:
   - {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 1}
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   - {r: 0, g: 0.2735849, b: 0.03239822, a: 1}
   - {r: 0.33962262, g: 0.008009966, b: 0.12351539, a: 1}
   - {r: 0.072676465, g: 0, b: 0.2264151, a: 1}
-  - {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
+  - {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0}
   m_player: {fileID: 2100000, guid: c07780fd69ef69446a027b797313281a, type: 2}
   cubeColor:
   - {r: 0.9058824, g: 0.9058824, b: 0.9058824, a: 1}
@@ -1151,7 +1151,7 @@ MonoBehaviour:
   - {r: 0.7019608, g: 1, b: 0.7372549, a: 1}
   - {r: 0.95294124, g: 0.54901963, b: 0.50980395, a: 1}
   - {r: 0.8078432, g: 0.7137255, b: 1, a: 1}
-  - {r: 0.07058824, g: 0.003921569, b: 0.20000002, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &1382984033
 Transform:
   m_ObjectHideFlags: 0
@@ -1609,7 +1609,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ff075319d13d0e7478aa66d3a9eeb6dc, type: 3}
+    m_Font: {fileID: 12800000, guid: 9b3dfe39bc93c4b4a98f13b53b817e29, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -1621,7 +1621,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '>>click any to START<<'
+  m_Text: '>>CLICK ANY TO START<<'
 --- !u!222 &1946777280
 CanvasRenderer:
   m_ObjectHideFlags: 0
