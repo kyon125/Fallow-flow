@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class playerController : MonoBehaviour
     public bool isGround;
     public playermove Status;
     public DesotybottomLine des;
+    public GameObject deathPs;
     float timer ,beatime;
     public AudioSource red1, red2;
     Rigidbody rb;
@@ -36,6 +38,10 @@ public class playerController : MonoBehaviour
         else if (Status == playermove.red2crash)
         {
             StartCoroutine(waitDestory());
+        }
+        else if (Status == playermove.death)
+        {
+            
         }
 
     }
@@ -90,10 +96,23 @@ public class playerController : MonoBehaviour
             //Debug.DrawLine(ray.origin, hit.point, Color.red);
         }
     }
+    public void forDeath()
+    {
+        StartCoroutine(waitDeath());
+    }
     IEnumerator waitDestory()
     {
         yield return new WaitForSeconds(waitdes);
         des.destoryline();
+    }
+    IEnumerator waitDeath()
+    {
+        transform.GetComponent<MeshRenderer>().enabled = false;
+        transform.GetComponent<BoxCollider>().enabled = false;
+        red2.Stop();
+        Instantiate(deathPs, transform);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("End");
     }
     public enum playermove
     {
@@ -101,6 +120,7 @@ public class playerController : MonoBehaviour
         red2,
         red2jump,
         red2crash,
+        death,
         inpass
     }
 }

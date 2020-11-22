@@ -51,7 +51,7 @@ public class tetrisFall : MonoBehaviour
         else if (player.Status == playerController.playermove.red2 && red2_musicplay == true)
         {
             m_timer += Time.deltaTime;
-            if (m_timer >= 1)
+            if (m_timer >= 13.5)
             {
                 red2_Start = true;
             }
@@ -105,7 +105,7 @@ public class tetrisFall : MonoBehaviour
                     }
                     else if (num2 == 17)
                     {
-                        Slice.DOMoveX(0.3f, 0.5f);
+                        Slice.DOMoveX(0.3f, 0.1f);
                     }
                     num2++;                    
                 }
@@ -115,6 +115,8 @@ public class tetrisFall : MonoBehaviour
     IEnumerator jumpdown()
     {
         yield return new WaitForSeconds(0.5f);
-        player.transform.DOMoveY(-6.5f, 1.5f).SetEase(Ease.InQuad);
+        player.transform.DOMoveY(-6.5f, 1f).SetEase(Ease.InQuad);
+        yield return new WaitForSeconds(1f);
+        cinemachineShake.cameraShake.goShake(7, 0.5f);        
     }
 }
