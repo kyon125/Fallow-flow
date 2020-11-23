@@ -3,22 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class playerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float Bpm , waitdes;
+    [Header("音樂")]
+    public AudioSource red1, red2;
+    [Header("計時")]
+    float timer, beatime, uptime;
+    public float Bpm, waitdes;
+    [Header("往前")]
+    public float F;
+    public float F_time;
+    [Header("橫移速度")]
+    public float speed;
+    [Header("剛體")]
     public bool isGround;
+    bool isup = true;
+    Rigidbody rb;
+    [Header("相機")]
+    public CinemachineTrackedDolly dolly;
+    public CinemachineVirtualCamera cine;
+    [Header("類別")]
     public playermove Status;
+
+    int layerMask = 1 << 8;
     public DesotybottomLine des;
     public GameObject deathPs;
-    float timer ,beatime , uptime;
-    bool isup =true;
-    public AudioSource red1, red2;
-    Rigidbody rb;
-    int layerMask = 1 << 8;
+    int dead;
     void Start()
     {
+        dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         rb = transform.GetComponent<Rigidbody>();
         beatime = 1 / Bpm * 60;
     }
@@ -28,12 +44,16 @@ public class playerController : MonoBehaviour
     {
         timer += Time.deltaTime;
         uptime += Time.deltaTime;
-        if (Status == playermove.red2)
+        if (Status == playermove.red1)
+        {
+            go_foword();            
+        }
+        else if (Status == playermove.red2)
         {
             red2_control();
             red2gravity();
             if (timer >= beatime)
-            {                
+            {
                 timer = timer - beatime;
             }
         }
@@ -43,17 +63,38 @@ public class playerController : MonoBehaviour
         }
         else if (Status == playermove.death)
         {
-            
+
         }
 
     }
     private void FixedUpdate()
     {
-        
+        if (Status == playermove.red1)
+        {
+            red_control();
+        }        
     }
     void ground()
     {
         
+    }
+    void red_control()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 0f, 0.1f);
+
+
+            Invoke("restore", 0.5f);
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 2.0f, 0.1f);
+
+            Invoke("restore", 0.5f);
+        }
     }
     void red2_control()
     {
@@ -104,6 +145,15 @@ public class playerController : MonoBehaviour
         {
             uptime = 0;
         }     
+    }
+    public void go_foword()
+    {
+        transform.DOKill();
+        transform.DOBlendableMoveBy(new Vector3(0, 0, F), F_time).SetEase(Ease.Linear);        
+    }
+    private void restore()
+    {
+        DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 1, 1.2f);
     }
     public void forDeath()
     {
