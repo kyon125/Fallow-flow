@@ -19,11 +19,11 @@ public class DesotybottomLine : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         timer += Time.deltaTime;
         if (godown == true && timer >falltime)
         {
-            tetris.transform.DOBlendableMoveBy(new Vector3(0, -1, 0) , 0.1F);
+            tetris.transform.DOBlendableMoveBy(new Vector3(0, 0, -1) , 0.1F);
             timer = 0;
             StartCoroutine(wait());
         }
@@ -36,12 +36,13 @@ public class DesotybottomLine : MonoBehaviour
     {
         if (clear == false && transform.childCount != 0)
         {
-            for (float f = -3.5f; f < 3.5f; f++)
+            for (float f = -3.5F; f <3.5f; f++)
             {
-                Ray ray = new Ray(new Vector3(f, transform.position.y, transform.position.z), Vector3.up);
+                Ray ray = new Ray(new Vector3(f, 0, -7.5f), Vector3.forward);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 1))
                 {
+                    Debug.DrawLine(ray.origin, hit.point, Color.red);
                     hit.transform.parent = transform.GetChild(0);
                 }
             }

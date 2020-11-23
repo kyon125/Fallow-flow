@@ -5,6 +5,7 @@ using UnityEngine;
 public class breakPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool isright;
     void Start()
     {
         
@@ -13,12 +14,26 @@ public class breakPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray ray = new Ray(new Vector3(transform.position.x ,transform.position.y+0.5f , transform.position.z) , Vector3.down);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 1.5f) && hit.transform.name == "Player")
+        if (isright == false)
         {
-            hit.transform.GetComponent<playerController>().Status = playerController.playermove.death;
-            hit.transform.GetComponent<playerController>().forDeath();
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 0.6f, transform.position.z), Vector3.down);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 1.5f) && hit.transform.name == "Player")
+            {
+                hit.transform.GetComponent<playerController>().Status = playerController.playermove.death;
+                hit.transform.GetComponent<playerController>().forDeath();
+            }
+        }              
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (isright == true)
+        {
+            if (collision.transform.name == "Player")
+            {
+                collision.transform.GetComponent<playerController>().Status = playerController.playermove.death;
+                collision.transform.GetComponent<playerController>().forDeath();
+            }
         }
     }
 }

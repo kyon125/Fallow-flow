@@ -115,7 +115,7 @@ public class tetrisFall : MonoBehaviour
     IEnumerator jumpdown()
     {
         yield return new WaitForSeconds(0.5f);
-        player.transform.DOMoveY(-6.5f, 1f).SetEase(Ease.InQuad);
+        player.transform.DOMoveZ(-6.5f, 1f).SetEase(Ease.InQuad);
         yield return new WaitForSeconds(1f);
         cinemachineShake.cameraShake.goShake(7, 0.5f);        
     }

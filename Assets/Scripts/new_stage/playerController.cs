@@ -12,7 +12,8 @@ public class playerController : MonoBehaviour
     public playermove Status;
     public DesotybottomLine des;
     public GameObject deathPs;
-    float timer ,beatime;
+    float timer ,beatime , uptime;
+    bool isup =true;
     public AudioSource red1, red2;
     Rigidbody rb;
     int layerMask = 1 << 8;
@@ -26,12 +27,13 @@ public class playerController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        uptime += Time.deltaTime;
         if (Status == playermove.red2)
         {
             red2_control();
+            red2gravity();
             if (timer >= beatime)
-            {
-                red2gravity();
+            {                
                 timer = timer - beatime;
             }
         }
@@ -77,24 +79,31 @@ public class playerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Ray ray = new Ray(transform.position, Vector3.down);
+            Ray ray = new Ray(transform.position, Vector3.back);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 1))
             {
-                transform.DOBlendableLocalMoveBy(Vector3.up, 0.1f).SetEase(Ease.OutQuad);
+                transform.DOBlendableLocalMoveBy(Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
+                uptime = 0;
+                isup = true;                
                 //Debug.DrawLine(ray.origin, hit.point, Color.red);
             }            
         }
     }
     void red2gravity()
     {
-        Ray ray = new Ray(transform.position, Vector3.down);
+        Ray ray = new Ray(transform.position, Vector3.back);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 1, layerMask) == false) 
+        if (Physics.Raycast(ray, out hit, 1, layerMask) == false && uptime >= beatime)
         {
-            transform.DOBlendableLocalMoveBy(Vector3.down, 0.1f).SetEase(Ease.OutQuad);
+            transform.DOBlendableLocalMoveBy(Vector3.back, 0.1f).SetEase(Ease.OutQuad);
+            uptime = 0;
             //Debug.DrawLine(ray.origin, hit.point, Color.red);
         }
+        if (Physics.Raycast(ray, out hit, 1, layerMask))
+        {
+            uptime = 0;
+        }     
     }
     public void forDeath()
     {

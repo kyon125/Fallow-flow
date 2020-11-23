@@ -15,15 +15,9 @@ public class trtrisMove : MonoBehaviour
         rb = transform.GetComponent<Rigidbody>();
         if (final == false)
         {
-            transform.DOMoveY(pos, time).SetEase(Ease.Linear);
+            transform.DOMoveZ(pos, time).SetEase(Ease.Linear);
             StartCoroutine(wait(time));
-        }
-
-        else if (final == true)
-        {
-            transform.DOMoveX(pos, time).SetEase(Ease.Linear);
-            StartCoroutine(wait(time));
-        }        
+        } 
     }
 
     // Update is called once per frame
