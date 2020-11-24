@@ -17,7 +17,7 @@ public class playerController : MonoBehaviour
     public float F;
     public float F_time;
     [Header("橫移速度")]
-    public float speed;
+    public float pos;
     [Header("剛體")]
     public bool isGround;
     bool isup = true;
@@ -37,6 +37,10 @@ public class playerController : MonoBehaviour
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         rb = transform.GetComponent<Rigidbody>();
         beatime = 1 / Bpm * 60;
+        if (Status == playermove.red1)
+        {
+            go_foword();
+        }
     }
 
     // Update is called once per frame
@@ -46,7 +50,7 @@ public class playerController : MonoBehaviour
         uptime += Time.deltaTime;
         if (Status == playermove.red1)
         {
-            go_foword();            
+            red_control();
         }
         else if (Status == playermove.red2)
         {
@@ -71,7 +75,8 @@ public class playerController : MonoBehaviour
     {
         if (Status == playermove.red1)
         {
-            red_control();
+            //rb.AddForce(Vector3.forward *  10);
+            
         }        
     }
     void ground()
@@ -80,19 +85,18 @@ public class playerController : MonoBehaviour
     }
     void red_control()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && pos < 2)
         {
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            transform.DOBlendableMoveBy(new Vector3( 4,0 ,0), 0.1f);
+            pos++;
             DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 0f, 0.1f);
-
-
             Invoke("restore", 0.5f);
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && pos > -2) 
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            transform.DOBlendableMoveBy(new Vector3( - 4, 0, 0) , 0.1f);
+            pos--;
             DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 2.0f, 0.1f);
-
             Invoke("restore", 0.5f);
         }
     }
@@ -149,7 +153,7 @@ public class playerController : MonoBehaviour
     public void go_foword()
     {
         transform.DOKill();
-        transform.DOBlendableMoveBy(new Vector3(0, 0, F), F_time).SetEase(Ease.Linear);        
+        transform.DOBlendableMoveBy(new Vector3(0, 0, F), F_time).SetEase(Ease.Linear);
     }
     private void restore()
     {
