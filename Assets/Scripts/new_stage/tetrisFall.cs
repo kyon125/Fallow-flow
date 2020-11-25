@@ -9,7 +9,7 @@ public class tetrisFall : MonoBehaviour
     // Start is called before the first frame update
     public Transform T, S ,Slice;
     public AudioSource s_red1, s_red2;
-    public float Bpm, fallcount , smallSize , cineMovetime;
+    public float Bpm, fallcount , smallSize , cineMovetime ,waitstart;
     float beatime , timer , timer2 , m_timer;
     int num,num2, beatcount, beatcount2;
     public playerController player;
@@ -28,7 +28,7 @@ public class tetrisFall : MonoBehaviour
     }
     void Start()
     {
-        Slice.DOMoveX(-0.19f, 0.5f);
+        Slice.DOMoveX(-4 * 0.19f, 0.5f);
         for (int I = 0; I <= T.childCount-1; I++)
         {
             tetris.Add(T.GetChild(I).gameObject);
@@ -44,14 +44,13 @@ public class tetrisFall : MonoBehaviour
     {
         if (player.Status == playerController.playermove.red2 && red2_musicplay == false)
         {
-            s_red2.Play();
-            m_timer += Time.deltaTime;
+            StartCoroutine(redplay(waitstart));
             red2_musicplay = true;
         }
         else if (player.Status == playerController.playermove.red2 && red2_musicplay == true)
         {
             m_timer += Time.deltaTime;
-            if (m_timer >= 13.5)
+            if (m_timer >= 13.75)
             {
                 red2_Start = true;
             }
@@ -105,7 +104,7 @@ public class tetrisFall : MonoBehaviour
                     }
                     else if (num2 == 17)
                     {
-                        Slice.DOMoveX(0.3f, 0.1f);
+                        Slice.DOMoveX(4*0.3f, 0.1f);
                     }
                     num2++;                    
                 }
@@ -114,9 +113,16 @@ public class tetrisFall : MonoBehaviour
     }
     IEnumerator jumpdown()
     {
+        s_red2.Stop();
         yield return new WaitForSeconds(0.5f);
-        player.transform.DOMoveZ(-6.5f, 1f).SetEase(Ease.InQuad);
+        player.transform.DOBlendableMoveBy(new Vector3 (0,0,-64), 1f).SetEase(Ease.InQuad);
         yield return new WaitForSeconds(1f);
         cinemachineShake.cameraShake.goShake(7, 0.5f);        
+    }
+    IEnumerator redplay(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        s_red2.Play();
+        m_timer = 0;
     }
 }

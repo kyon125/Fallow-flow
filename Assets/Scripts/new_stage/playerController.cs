@@ -12,20 +12,25 @@ public class playerController : MonoBehaviour
     public AudioSource red1, red2;
     [Header("計時")]
     float timer, beatime, uptime;
-    public float Bpm, waitdes;
+    public float Bpm, waitdes , sm_time1 ,sm_time2;
     [Header("往前")]
     public float F;
     public float F_time;
-    [Header("橫移速度")]
+    [Header("橫移")]
+    public Animator ani;
     public float pos;
     [Header("剛體")]
     public bool isGround;
+    Vector3 scale;
     bool isup = true;
     Rigidbody rb;
     [Header("相機")]
+    public Camera main;
     public CinemachineTrackedDolly dolly;
     public CinemachineVirtualCamera cine;
     [Header("類別")]
+    public List<GameObject> one;
+    public List<GameObject> secand;
     public playermove Status;
 
     int layerMask = 1 << 8;
@@ -35,11 +40,12 @@ public class playerController : MonoBehaviour
     void Start()
     {
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
+        scale = transform.localScale;
         rb = transform.GetComponent<Rigidbody>();
         beatime = 1 / Bpm * 60;
         if (Status == playermove.red1)
         {
-            go_foword();
+            StartCoroutine(r1Musicplay(sm_time1));
         }
     }
 
@@ -87,17 +93,18 @@ public class playerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow) && pos < 2)
         {
-            transform.DOBlendableMoveBy(new Vector3( 4,0 ,0), 0.1f);
-            pos++;
-            DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 0f, 0.1f);
-            Invoke("restore", 0.5f);
+            //transform.DOBlendableMoveBy(new Vector3( 4,0 ,0), 0.1f);
+            //pos++;
+            //DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 0f, 0.1f);
+            //ani.SetBool("Right", true);
+            //ani.SetBool("Left", false);
+            //ani.SetBool("End", false);
+            //Invoke("restore", 0.5f);
+            StartCoroutine(goright());
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) && pos > -2) 
         {
-            transform.DOBlendableMoveBy(new Vector3( - 4, 0, 0) , 0.1f);
-            pos--;
-            DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 2.0f, 0.1f);
-            Invoke("restore", 0.5f);
+            StartCoroutine(goleft());
         }
     }
     void red2_control()
@@ -106,9 +113,9 @@ public class playerController : MonoBehaviour
         {
             Ray ray = new Ray(transform.position, Vector3.right );
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 1 , layerMask) == false)
+            if (Physics.Raycast(ray, out hit, 4 , layerMask) == false)
             {
-                transform.DOBlendableLocalMoveBy(Vector3.right, 0.1f).SetEase(Ease.OutQuad);
+                transform.DOBlendableLocalMoveBy(4*Vector3.right, 0.1f).SetEase(Ease.OutQuad);
                 //Debug.DrawLine(ray.origin, hit.point, Color.red);
             }            
         }
@@ -116,9 +123,9 @@ public class playerController : MonoBehaviour
         {
             Ray ray = new Ray(transform.position, Vector3.left);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 1 , layerMask) == false)
+            if (Physics.Raycast(ray, out hit, 4 , layerMask) == false)
             {
-                transform.DOBlendableLocalMoveBy(Vector3.left, 0.1f).SetEase(Ease.OutQuad);
+                transform.DOBlendableLocalMoveBy(4*Vector3.left, 0.1f).SetEase(Ease.OutQuad);
                 //Debug.DrawLine(ray.origin, hit.point, Color.red);
             }            
         }
@@ -126,9 +133,9 @@ public class playerController : MonoBehaviour
         {
             Ray ray = new Ray(transform.position, Vector3.back);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 1))
+            if (Physics.Raycast(ray, out hit, 4))
             {
-                transform.DOBlendableLocalMoveBy(Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
+                transform.DOBlendableLocalMoveBy(4*Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
                 uptime = 0;
                 isup = true;                
                 //Debug.DrawLine(ray.origin, hit.point, Color.red);
@@ -139,13 +146,13 @@ public class playerController : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, Vector3.back);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 1, layerMask) == false && uptime >= beatime)
+        if (Physics.Raycast(ray, out hit, 4, layerMask) == false && uptime >= beatime)
         {
-            transform.DOBlendableLocalMoveBy(Vector3.back, 0.1f).SetEase(Ease.OutQuad);
+            transform.DOBlendableLocalMoveBy(4*Vector3.back, 0.1f).SetEase(Ease.OutQuad);
             uptime = 0;
             //Debug.DrawLine(ray.origin, hit.point, Color.red);
         }
-        if (Physics.Raycast(ray, out hit, 1, layerMask))
+        if (Physics.Raycast(ray, out hit, 4, layerMask))
         {
             uptime = 0;
         }     
@@ -154,6 +161,17 @@ public class playerController : MonoBehaviour
     {
         transform.DOKill();
         transform.DOBlendableMoveBy(new Vector3(0, 0, F), F_time).SetEase(Ease.Linear);
+        red1.Play();
+        
+    }
+    public void trunMoveend()
+    {
+        ani.SetBool("Right", false);
+        ani.SetBool("Left", false);
+    }
+    public void Moveend()
+    {
+        ani.SetBool("End", true);
     }
     private void restore()
     {
@@ -163,10 +181,35 @@ public class playerController : MonoBehaviour
     {
         StartCoroutine(waitDeath());
     }
+    public void goTored2()
+    {
+        StartCoroutine(changered2(0.5f)); 
+    }
+    IEnumerator changered2(float time)
+    {
+        red1.Stop();
+        yield return new WaitForSeconds(time);
+        main.orthographic = true;
+        for (int i = 0; i < secand.Count; i++)
+        {
+            secand[i].SetActive(true);
+        }
+        for (int i = 0; i < one.Count; i++)
+        {
+            one[i].SetActive(false);
+        }
+    }
+    IEnumerator r1Musicplay(float time)
+    {
+        yield return new WaitForSeconds(time);
+        go_foword();
+    }
     IEnumerator waitDestory()
     {
         yield return new WaitForSeconds(waitdes);
-        des.destoryline();
+        des.destoryline(); 
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene("mainmenu");
     }
     IEnumerator waitDeath()
     {
@@ -177,6 +220,29 @@ public class playerController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("End");
     }
+    IEnumerator goleft()
+    {
+        transform.DOBlendableMoveBy(new Vector3(-4, 0, 0), 0.1f);
+        pos--;        
+        ani.SetBool("Right", false);
+        ani.SetBool("Left", true);
+        yield return new WaitForSeconds(0.15f);
+        //DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 2.0f, 0.5f);
+        ani.SetBool("End", false);
+        //Invoke("restore", 0.5f);
+    }
+    IEnumerator goright()
+    {
+        transform.DOBlendableMoveBy(new Vector3(4, 0, 0), 0.1f);
+        pos++;
+        //DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 0f, 0.1f);
+        ani.SetBool("Right", true);
+        ani.SetBool("Left", false);
+        yield return new WaitForSeconds(0.15f);
+        ani.SetBool("End", false);
+        //Invoke("restore", 0.5f);
+    }
+
     public enum playermove
     {
         red1,

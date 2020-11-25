@@ -15,7 +15,7 @@ public class trtrisMove : MonoBehaviour
         rb = transform.GetComponent<Rigidbody>();
         if (final == false)
         {
-            transform.DOMoveZ(pos, time).SetEase(Ease.Linear);
+            transform.DOBlendableMoveBy(new Vector3(0,0, -4*(10 -pos)), time).SetEase(Ease.Linear);
             StartCoroutine(wait(time));
         } 
     }

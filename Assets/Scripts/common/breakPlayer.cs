@@ -16,9 +16,9 @@ public class breakPlayer : MonoBehaviour
     {
         if (isright == false)
         {
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 0.6f, transform.position.z), Vector3.down);
+            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 2.4f, transform.position.z), Vector3.down);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 1.5f) && hit.transform.name == "Player")
+            if (Physics.Raycast(ray, out hit, 6f) && hit.transform.name == "Player")
             {
                 hit.transform.GetComponent<playerController>().Status = playerController.playermove.death;
                 hit.transform.GetComponent<playerController>().forDeath();

@@ -6,7 +6,9 @@ public class addItem : MonoBehaviour
 {
     // Start is called before the first frame update
     public AudioSource ad;
-    public GameObject PS;
+    public ParticleSystem PS ,PS2;
+    public bool hasDoor;
+    public List<GameObject> door;
     void Start()
     {
         
@@ -19,8 +21,23 @@ public class addItem : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        ad.Play();
-        Instantiate(PS , transform.position , Quaternion.identity);
-        Destroy(this.gameObject);
+        if (hasDoor == true)
+        {
+            for (int i = 0; i < door.Count; i++)
+            {
+                door[i].GetComponent<thidTetrismove>().destoryAdditem++;
+            }
+            ad.Play();
+            PS.Play();
+            PS2.Play();
+            Destroy(this.gameObject);
+        }
+        else if (hasDoor == false)
+        {
+            ad.Play();
+            PS.Play();
+            PS2.Play();
+            Destroy(this.gameObject);
+        }        
     }    
 }
