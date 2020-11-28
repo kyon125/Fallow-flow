@@ -19,6 +19,7 @@ public class playerController : MonoBehaviour
     [Header("橫移")]
     public Animator ani;
     public float pos;
+    public GameObject mark;
     [Header("剛體")]
     public bool isGround;
     Vector3 scale;

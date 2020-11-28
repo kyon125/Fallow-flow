@@ -69,6 +69,7 @@ public class thidTetrismove : MonoBehaviour
                             kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 2.5F);
                         }
                         transform.DOBlendableMoveBy(new Vector3(movePos, 0, 0), moveTime);
+                        cinemachineShake.cameraShake.goShake(7, 0.5f);
                         Move = true;
                     }                    
                     break;

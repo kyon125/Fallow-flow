@@ -18,5 +18,11 @@ public class cinemachineShake : MonoBehaviour
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cine.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = shake;
         DOTween.To( () =>cinemachineBasicMultiChannelPerlin.m_AmplitudeGain , x=>cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = x, 0 , time);
-    }    
+    }
+    public void goShakethird(float shake, float time)
+    {
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cine.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = shake;
+        DOTween.To(() => cinemachineBasicMultiChannelPerlin.m_AmplitudeGain, x => cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = x, 0, time);
+    }
 }
