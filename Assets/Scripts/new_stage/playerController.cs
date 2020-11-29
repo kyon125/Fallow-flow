@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -38,6 +39,27 @@ public class playerController : MonoBehaviour
     public DesotybottomLine des;
     public GameObject deathPs;
     int dead;
+
+
+
+    [Header("能量")]
+    public EnergyBar energyBar;
+    public int maxEnergy = 133;
+    public int resetEnergy = 0;
+    public int currentEnergy;
+
+    public GameObject R;
+
+    public Image rFill_c;
+    public GameObject rFill;
+
+    public EnergyLine energyLine;
+
+    Color colorStart = Color.blue;
+    Color colorEnd = Color.green;
+    float duration = 1.0f;
+    public Renderer rend;
+
     void Start()
     {
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
@@ -48,6 +70,20 @@ public class playerController : MonoBehaviour
         {
             StartCoroutine(r1Musicplay(sm_time1));
         }
+
+        // 能量
+        currentEnergy = resetEnergy;
+        energyBar.SetMaxEnergy(maxEnergy);
+        energyBar.SetResetEnergy(resetEnergy);
+
+        energyLine.SetMaxEnergy(3);
+        energyLine.SetEnergy(3);
+
+        rFill_c.GetComponent<Renderer>();
+
+
+        rend = GetComponent<Renderer>();
+        rend.material.color = Color.blue;
     }
 
     // Update is called once per frame
@@ -76,6 +112,34 @@ public class playerController : MonoBehaviour
         {
 
         }
+
+       /* else if (Input.GetMouseButtonDown(1))
+        {
+            currentEnergy -= 1;
+            energyBar.SetEnergy(currentEnergy);
+
+            if (energyBar.slider.value == 12)
+            {
+                R.transform.position += new Vector3(-46.6f, 0, 0);
+                energyLine.SetEnergy(2);
+
+                rFill_c.color = new Color32(255, 255, 255, 255);
+            }
+            else if (energyBar.slider.value == 9)
+            {
+                R.transform.position += new Vector3(-46.6f, 0, 0);
+                energyLine.SetEnergy(1);
+            }
+            else if (energyBar.slider.value == 6)
+            {
+                R.transform.position += new Vector3(-46.6f, 0, 0);
+                energyLine.SetEnergy(0);
+            }
+            else if (energyBar.slider.value == 3)
+            {
+                R.transform.position += new Vector3(-46.6f, 0, 0);
+            }
+        }*/
 
     }
     void ground()
@@ -244,5 +308,22 @@ public class playerController : MonoBehaviour
         red2crash,
         death,
         inpass
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "energy")
+        {
+            if (currentEnergy < maxEnergy)
+            {
+                currentEnergy += 1;
+                energyBar.SetEnergy(currentEnergy);
+
+                if (currentEnergy == 133)
+                {
+                    rFill.SetActive(true);
+                }
+            }
+        }
     }
 }

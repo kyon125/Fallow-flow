@@ -13,6 +13,7 @@ TagManager:
   - wall
   - deadwall
   - tetrisCube
+  - energy
   layers:
   - Default
   - TransparentFX
