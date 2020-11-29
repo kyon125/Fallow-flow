@@ -10,6 +10,7 @@ public class changeStage : MonoBehaviour
     void Start()
     {
         scene = SceneManager.GetActiveScene();
+        print(scene.name);
     }
 
     // Update is called once per frame
@@ -19,12 +20,12 @@ public class changeStage : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" &&  scene.name == "S1" )
+        if (other.gameObject.tag == "Player" &&  scene.name == "s1" )
         {
             print("aa");
             other.gameObject.GetComponent<playerController>().goTored2();
         }
-        else if (other.gameObject.tag == "Player" && scene.name == "S2")
+        else if (other.gameObject.tag == "Player" && scene.name == "s2")
         {
             print("aa");
             other.gameObject.GetComponent<playerControllerS2>().goTored2();
