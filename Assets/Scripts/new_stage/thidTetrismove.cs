@@ -30,9 +30,9 @@ public class thidTetrismove : MonoBehaviour
                 {
                     for (int i = 0; i < transform.childCount; i++)
                     {
-                        kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A",0.5f);
                         kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_90955845", 0);
                         kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_443DFAAE", 0);
+                        kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A",0.1f);                        
                     }                    
                     break;
                 }
@@ -40,7 +40,7 @@ public class thidTetrismove : MonoBehaviour
                 {
                     for (int i = 0; i < transform.childCount; i++)
                     {
-                        kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 1F);
+                        kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 0.2F);
                     }
                     break;
                 }
@@ -48,7 +48,7 @@ public class thidTetrismove : MonoBehaviour
                 {
                     for (int i = 0; i < transform.childCount; i++)
                     {
-                        kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 1.5F);
+                        kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 0.3F);
                     }
                     break;
                 }
@@ -56,7 +56,7 @@ public class thidTetrismove : MonoBehaviour
                 {
                     for (int i = 0; i < transform.childCount; i++)
                     {
-                        kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 2F);
+                        kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 0.4F);
                     }
                     break;
                 }
@@ -66,7 +66,7 @@ public class thidTetrismove : MonoBehaviour
                     {
                         for (int i = 0; i < transform.childCount; i++)
                         {
-                            kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 2.5F);
+                            kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 0.5F);
                         }
                         transform.DOBlendableMoveBy(new Vector3(movePos, 0, 0), moveTime);
                         cinemachineShake.cameraShake.goShake(7, 0.5f);

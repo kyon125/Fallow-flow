@@ -5,14 +5,14 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using Cinemachine;
 
-public class playerController : MonoBehaviour
+public class playerControllerS2 : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("音樂")]
     public AudioSource red1, red2;
     [Header("計時")]
     float timer, beatime, uptime;
-    public float Bpm, waitdes , sm_time1 ,sm_time2;
+    public float Bpm, waitdes, sm_time1, sm_time2;
     [Header("往前")]
     public float F;
     public float F_time;
@@ -32,7 +32,11 @@ public class playerController : MonoBehaviour
     [Header("類別")]
     public List<GameObject> one;
     public List<GameObject> secand;
+    public GameObject redObj, greenObj;
     public playermove Status;
+    public int colornum;
+    public gameColor color;
+    
 
     int layerMask = 1 << 8;
     public DesotybottomLine des;
@@ -67,6 +71,16 @@ public class playerController : MonoBehaviour
             {
                 timer = timer - beatime;
             }
+            if (color == gameColor.red)
+            {
+                redObj.SetActive(true);
+                greenObj.SetActive(false);
+            }
+            else if (color == gameColor.green)
+            {
+                redObj.SetActive(false);
+                greenObj.SetActive(true);
+            }
         }
         else if (Status == playermove.red2crash)
         {
@@ -80,7 +94,7 @@ public class playerController : MonoBehaviour
     }
     void ground()
     {
-        
+
     }
     void red_control()
     {
@@ -95,7 +109,7 @@ public class playerController : MonoBehaviour
             //Invoke("restore", 0.5f);
             StartCoroutine(goright());
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && pos > -2) 
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && pos > -2)
         {
             StartCoroutine(goleft());
         }
@@ -104,23 +118,23 @@ public class playerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Ray ray = new Ray(transform.position, Vector3.right );
+            Ray ray = new Ray(transform.position, Vector3.right);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 4 , layerMask) == false)
+            if (Physics.Raycast(ray, out hit, 4, layerMask) == false)
             {
-                transform.DOBlendableLocalMoveBy(4*Vector3.right, 0.1f).SetEase(Ease.OutQuad);
+                transform.DOBlendableLocalMoveBy(4 * Vector3.right, 0.1f).SetEase(Ease.OutQuad);
                 //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            }            
+            }
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Ray ray = new Ray(transform.position, Vector3.left);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 4 , layerMask) == false)
+            if (Physics.Raycast(ray, out hit, 4, layerMask) == false)
             {
-                transform.DOBlendableLocalMoveBy(4*Vector3.left, 0.1f).SetEase(Ease.OutQuad);
+                transform.DOBlendableLocalMoveBy(4 * Vector3.left, 0.1f).SetEase(Ease.OutQuad);
                 //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            }            
+            }
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -128,12 +142,13 @@ public class playerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 4))
             {
-                transform.DOBlendableLocalMoveBy(4*Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
+                transform.DOBlendableLocalMoveBy(4 * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
                 uptime = 0;
-                isup = true;                
+                isup = true;
                 //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            }            
+            }
         }
+        conColor();
     }
     void red2gravity()
     {
@@ -141,21 +156,40 @@ public class playerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 4, layerMask) == false && uptime >= beatime)
         {
-            transform.DOBlendableLocalMoveBy(4*Vector3.back, 0.1f).SetEase(Ease.OutQuad);
+            transform.DOBlendableLocalMoveBy(4 * Vector3.back, 0.1f).SetEase(Ease.OutQuad);
             uptime = 0;
             //Debug.DrawLine(ray.origin, hit.point, Color.red);
         }
         if (Physics.Raycast(ray, out hit, 4, layerMask))
         {
             uptime = 0;
-        }     
+        }
+    }
+    void conColor()
+    {
+        if (Input.GetKeyDown(KeyCode.Z) && colornum > 0)
+        {
+            colornum--;
+        }
+        else if (Input.GetKeyDown(KeyCode.C) && colornum < 1)
+        {
+            colornum++;
+        }
+        if (colornum == 0)
+        {
+            color = gameColor.green; 
+        }
+        else if (colornum == 1)
+        {
+            color = gameColor.red;
+        }
     }
     public void go_foword()
     {
         transform.DOKill();
         transform.DOBlendableMoveBy(new Vector3(0, 0, F), F_time).SetEase(Ease.Linear);
         red1.Play();
-        
+
     }
     public void trunMoveend()
     {
@@ -176,7 +210,7 @@ public class playerController : MonoBehaviour
     }
     public void goTored2()
     {
-        StartCoroutine(changered2(0.5f)); 
+        StartCoroutine(changered2(0.5f));
     }
     IEnumerator changered2(float time)
     {
@@ -200,7 +234,7 @@ public class playerController : MonoBehaviour
     IEnumerator waitDestory()
     {
         yield return new WaitForSeconds(waitdes);
-        des.destoryline(); 
+        des.destoryline();
         yield return new WaitForSeconds(10);
         SceneManager.LoadScene("mainmenu");
     }
@@ -216,7 +250,7 @@ public class playerController : MonoBehaviour
     IEnumerator goleft()
     {
         transform.DOBlendableMoveBy(new Vector3(-4, 0, 0), 0.1f);
-        pos--;        
+        pos--;
         ani.SetBool("Right", false);
         ani.SetBool("Left", true);
         yield return new WaitForSeconds(0.15f);
@@ -244,5 +278,10 @@ public class playerController : MonoBehaviour
         red2crash,
         death,
         inpass
+    }
+    public enum gameColor
+    {
+        red,
+        green
     }
 }
