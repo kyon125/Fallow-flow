@@ -50,7 +50,7 @@ public class tetrisFallS2 : MonoBehaviour
         else if (player.Status == playerControllerS2.playermove.red2 && red2_musicplay == true)
         {
             m_timer += Time.deltaTime;
-            if (m_timer >= 1)
+            if (m_timer >= 10.5F)
             {
                 red2_Start = true;
             }

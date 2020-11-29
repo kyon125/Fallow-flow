@@ -25,6 +25,10 @@ public class playerControllerS2 : MonoBehaviour
     Vector3 scale;
     bool isup = true;
     Rigidbody rb;
+    [Header("材質")]
+    public Material m_normal;
+    public Material m_red;
+    SkinnedMeshRenderer render;
     [Header("相機")]
     public Camera main;
     public CinemachineTrackedDolly dolly;
@@ -36,6 +40,7 @@ public class playerControllerS2 : MonoBehaviour
     public playermove Status;
     public int colornum;
     public gameColor color;
+    public Playecolor playecolor;
     
 
     int layerMask = 1 << 8;
@@ -45,6 +50,7 @@ public class playerControllerS2 : MonoBehaviour
     void Start()
     {
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
+        render = transform.GetComponent<SkinnedMeshRenderer>();
         scale = transform.localScale;
         rb = transform.GetComponent<Rigidbody>();
         beatime = 1 / Bpm * 60;
@@ -113,6 +119,7 @@ public class playerControllerS2 : MonoBehaviour
         {
             StartCoroutine(goleft());
         }
+        thirdConcolor();
     }
     void red2_control()
     {
@@ -165,6 +172,19 @@ public class playerControllerS2 : MonoBehaviour
             uptime = 0;
         }
     }
+    void thirdConcolor()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            playecolor = Playecolor.red;
+            render.material = m_red;
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            playecolor = Playecolor.green;
+            render.material = m_normal;
+        }
+    }
     void conColor()
     {
         if (Input.GetKeyDown(KeyCode.Z) && colornum > 0)
@@ -208,14 +228,19 @@ public class playerControllerS2 : MonoBehaviour
     {
         StartCoroutine(waitDeath());
     }
+    public void forDeaththird()
+    {
+        StartCoroutine(waitDeaththird());
+    }
     public void goTored2()
     {
-        StartCoroutine(changered2(0.5f));
+        StartCoroutine(changered2(5));
     }
     IEnumerator changered2(float time)
     {
-        red1.Stop();
+        DOTween.To(() => red1.volume, x => red1.volume = x, 0, 3f);
         yield return new WaitForSeconds(time);
+        red1.Stop();
         main.orthographic = true;
         for (int i = 0; i < secand.Count; i++)
         {
@@ -244,6 +269,17 @@ public class playerControllerS2 : MonoBehaviour
         transform.GetComponent<BoxCollider>().enabled = false;
         red2.Stop();
         Instantiate(deathPs, transform);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("End");
+    }
+    IEnumerator waitDeaththird()
+    {
+        transform.GetComponent<SkinnedMeshRenderer>().enabled = false;
+        transform.GetComponent<BoxCollider>().enabled = false;
+        transform.DOKill();
+        transform.GetComponent<Rigidbody>().isKinematic = true;
+        red1.Stop();
+        Instantiate(deathPs, new Vector3(transform.position.x + 6.54f ,transform.position.y , transform.position.z) ,Quaternion.identity);
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("End");
     }
@@ -280,6 +316,11 @@ public class playerControllerS2 : MonoBehaviour
         inpass
     }
     public enum gameColor
+    {
+        red,
+        green
+    }
+    public enum Playecolor
     {
         red,
         green

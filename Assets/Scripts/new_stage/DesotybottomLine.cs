@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class DesotybottomLine : MonoBehaviour
 {
@@ -12,9 +13,10 @@ public class DesotybottomLine : MonoBehaviour
     float timer;
     bool clear, godown;
     int count;
+    Scene scene;
     void Start()
     {
-        
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -30,7 +32,15 @@ public class DesotybottomLine : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<playerController>().Status = playerController.playermove.red2crash;
+        if (other.gameObject.tag == "Player" && scene.name == "s1")
+        {
+            other.GetComponent<playerController>().Status = playerController.playermove.red2crash;
+        }
+        else if (other.gameObject.tag == "Player" && scene.name == "s2")
+        {
+            other.GetComponent<playerControllerS2>().Status = playerControllerS2.playermove.red2crash;
+        }
+        
     }
     public void destoryline()
     {
