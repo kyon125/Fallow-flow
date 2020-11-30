@@ -279,7 +279,7 @@ public class playerController : MonoBehaviour
         transform.DOKill();
         transform.GetComponent<Rigidbody>().isKinematic = true;
         red1.Stop();
-        Instantiate(deathPs, new Vector3(transform.position.x + 6.54f, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(deathPs, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("End");
     }
@@ -292,7 +292,6 @@ public class playerController : MonoBehaviour
         ani.SetBool("Left", true);
         yield return new WaitForSeconds(0.15f);
         //DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 2.0f, 0.5f);
-        ani.SetBool("End", false);
         //Invoke("restore", 0.5f);
     }
     IEnumerator goright()
@@ -303,7 +302,6 @@ public class playerController : MonoBehaviour
         ani.SetBool("Right", true);
         ani.SetBool("Left", false);
         yield return new WaitForSeconds(0.15f);
-        ani.SetBool("End", false);
         //Invoke("restore", 0.5f);
     }
 
