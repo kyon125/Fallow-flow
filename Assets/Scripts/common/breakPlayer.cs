@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class breakPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool isright;
+    Scene scene;
     void Start()
     {
-        
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -29,11 +31,26 @@ public class breakPlayer : MonoBehaviour
     {
         if (isright == true)
         {
-            if (collision.transform.name == "Player")
+            if (collision.transform.name == "Player" && scene.name == "s1" && collision.transform.GetComponent<playerController>().Status == playerController.playermove.red2)
             {
                 collision.transform.GetComponent<playerController>().Status = playerController.playermove.death;
                 collision.transform.GetComponent<playerController>().forDeath();
             }
-        }
+            else if (collision.transform.name == "Player" && scene.name == "s2" && collision.transform.GetComponent<playerControllerS2>().Status == playerControllerS2.playermove.red2)
+            {
+                collision.transform.GetComponent<playerControllerS2>().Status = playerControllerS2.playermove.death;
+                collision.transform.GetComponent<playerControllerS2>().forDeath();
+            }
+            else if (collision.transform.name == "3Dplayer" && scene.name == "s1" && collision.transform.GetComponent<playerController>().Status == playerController.playermove.red1)
+            {                
+                collision.transform.GetComponent<playerController>().Status = playerController.playermove.death;
+                collision.transform.GetComponent<playerController>().forDeath();
+            }
+            else if (collision.transform.name == "3Dplayer" && scene.name == "s2" && collision.transform.GetComponent<playerControllerS2>().Status == playerControllerS2.playermove.red1)
+            {
+                collision.transform.GetComponent<playerControllerS2>().Status = playerControllerS2.playermove.death;
+                collision.transform.GetComponent<playerControllerS2>().forDeaththird();
+            }
+        }        
     }
 }

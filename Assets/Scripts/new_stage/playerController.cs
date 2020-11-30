@@ -238,6 +238,11 @@ public class playerController : MonoBehaviour
     {
         StartCoroutine(waitDeath());
     }
+    public void forDeaththird()
+    {
+        StartCoroutine(waitDeaththird());
+    }
+
     public void goTored2()
     {
         StartCoroutine(changered2(0.5f)); 
@@ -277,6 +282,18 @@ public class playerController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("End");
     }
+    IEnumerator waitDeaththird()
+    {
+        transform.GetComponent<SkinnedMeshRenderer>().enabled = false;
+        transform.GetComponent<BoxCollider>().enabled = false;
+        transform.DOKill();
+        transform.GetComponent<Rigidbody>().isKinematic = true;
+        red1.Stop();
+        Instantiate(deathPs, new Vector3(transform.position.x + 6.54f, transform.position.y, transform.position.z), Quaternion.identity);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("End");
+    }
+
     IEnumerator goleft()
     {
         transform.DOBlendableMoveBy(new Vector3(-4, 0, 0), 0.1f);
