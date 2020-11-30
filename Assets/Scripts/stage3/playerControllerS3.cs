@@ -37,7 +37,7 @@ public class playerControllerS3 : MonoBehaviour
     [Header("類別")]
     public List<GameObject> one;
     public List<GameObject> secand;
-    public GameObject redObj, greenObj;
+    public GameObject redObj, greenObj ,blueobj;
     public playermove Status;
     public int colornum = 1;
     public gameColor color;
@@ -176,24 +176,33 @@ public class playerControllerS3 : MonoBehaviour
         {
             colornum++;
         }
-        if (colornum == 0)
-        {
-            color = gameColor.red;
-            playecolor = Playecolor.red;
-            render.material = m_red;
-        }
-        else if (colornum == 1)
-        {
-            color = gameColor.blue;
-            playecolor = Playecolor.blue;
-            render.material = m_normal;            
-        }
-        else if (colornum == 2)
-        {
-            color = gameColor.green;
-            playecolor = Playecolor.green;
-            render.material = m_green;
-        }
+        //if (colornum == 0)
+        //{
+        //    color = gameColor.red;
+        //    playecolor = Playecolor.red;
+        //    render.material = m_red;
+        //    redObj.SetActive(false);
+        //    greenObj.SetActive(false);
+        //    blueobj.SetActive(true);
+        //}
+        //else if (colornum == 1)
+        //{
+        //    color = gameColor.blue;
+        //    playecolor = Playecolor.blue;
+        //    render.material = m_normal;
+        //    redObj.SetActive(true);
+        //    greenObj.SetActive(false);
+        //    blueobj.SetActive(false);
+        //}
+        //else if (colornum == 2)
+        //{
+        //    color = gameColor.green;
+        //    playecolor = Playecolor.green;
+        //    render.material = m_green;
+        //    redObj.SetActive(false);
+        //    greenObj.SetActive(true);
+        //    blueobj.SetActive(false);
+        //}
     }
     void conColor()
     {
@@ -225,10 +234,6 @@ public class playerControllerS3 : MonoBehaviour
     {
         ani.SetBool("Right", false);
         ani.SetBool("Left", false);
-    }
-    public void Moveend()
-    {
-        ani.SetBool("End", true);
     }
     private void restore()
     {
@@ -289,7 +294,7 @@ public class playerControllerS3 : MonoBehaviour
         transform.DOKill();
         transform.GetComponent<Rigidbody>().isKinematic = true;
         red1.Stop();
-        Instantiate(deathPs, new Vector3(transform.position.x + 6.54f, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(deathPs, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("End");
     }
