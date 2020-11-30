@@ -41,7 +41,14 @@ public class playerControllerS2 : MonoBehaviour
     public int colornum;
     public gameColor color;
     public Playecolor playecolor;
-    
+
+    [Header("能量")]
+    public EnergyBar energyBar;
+    public int maxEnergy = 72;
+    public int resetEnergy = 0;
+    private int currentEnergy;
+ 
+
 
     int layerMask = 1 << 8;
     public DesotybottomLine des;
@@ -49,6 +56,14 @@ public class playerControllerS2 : MonoBehaviour
     int dead;
     void Start()
     {
+        // 能量
+        currentEnergy = resetEnergy;
+        energyBar.SetMaxEnergy(maxEnergy);
+        energyBar.SetResetEnergy(resetEnergy);
+
+        // 載入全域變數
+        currentEnergy = energyCollect.currentEnergy;
+
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         render = transform.GetComponent<SkinnedMeshRenderer>();
         scale = transform.localScale;
@@ -324,5 +339,16 @@ public class playerControllerS2 : MonoBehaviour
     {
         red,
         green
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "energy")
+        {
+            if (currentEnergy < maxEnergy)
+            {
+                currentEnergy = currentEnergy + 1;
+                energyCollect.currentEnergy = currentEnergy;
+            }
+        }
     }
 }

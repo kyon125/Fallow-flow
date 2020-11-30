@@ -65,7 +65,15 @@ public class DesotybottomLine : MonoBehaviour
 
             // 消除方塊加分
             Destroy(transform.GetChild(0).gameObject);
-            currentEnergy = currentEnergy + 7;
+
+            if (currentEnergy <= 133)
+            {
+                currentEnergy = currentEnergy + 7;
+            }
+            else if (currentEnergy >= 133)
+            {
+                currentEnergy = 133;
+            }
             energyCollect.currentEnergy = currentEnergy;
 
             timer = 0;

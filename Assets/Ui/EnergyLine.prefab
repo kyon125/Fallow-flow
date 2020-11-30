@@ -25,7 +25,7 @@ RectTransform:
   m_GameObject: {fileID: 8739684663561744174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1460154, y: 2.1460154, z: 2.1460154}
   m_Children:
   - {fileID: 8739684665235241249}
   - {fileID: 8739684665440617379}
@@ -76,7 +76,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 313.89996, y: 160}
+  m_AnchoredPosition: {x: 313.9, y: 160}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8739684663572739227
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -202,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8739684664002815866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 505.09998, y: 159.29999, z: -3.5304565}
+  m_LocalPosition: {x: 504.4, y: 159.29999, z: -3.5304565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8739684665048177570}
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -317,7 +317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 413.2, y: 160}
+  m_AnchoredPosition: {x: 412.7, y: 160}
   m_SizeDelta: {x: 1120, y: 476}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8739684664289135040
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -383,7 +383,7 @@ RectTransform:
   m_GameObject: {fileID: 8739684665048177571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 3.5304565}
-  m_LocalScale: {x: 0.8407092, y: 0.83085793, z: 0.7906335}
+  m_LocalScale: {x: 0.8565146, y: 0.8464781, z: 0.7906335}
   m_Children: []
   m_Father: {fileID: 8739684664002815861}
   m_RootOrder: 0
@@ -446,7 +446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8739684665235241249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -456,14 +456,14 @@ RectTransform:
   m_GameObject: {fileID: 8739684665235241254}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9060974, y: 2.3659096, z: 2.5236788}
+  m_LocalScale: {x: 2.8765397, y: 2.3659096, z: 2.5236788}
   m_Children: []
   m_Father: {fileID: 8739684663561744169}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 457.70007, y: 192.79999}
+  m_AnchoredPosition: {x: 458.7, y: 208.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8739684665235241251
@@ -529,14 +529,14 @@ RectTransform:
   m_GameObject: {fileID: 8739684665440617382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.23923844, y: 0.43130344, z: 0.4154669}
+  m_LocalScale: {x: 0.23780319, y: 0.412899, z: 0.3587266}
   m_Children: []
   m_Father: {fileID: 8739684663561744169}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 409.3, y: 160.2}
+  m_AnchoredPosition: {x: 408, y: 159.2}
   m_SizeDelta: {x: 1120, y: 476}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8739684665440617376
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

@@ -47,12 +47,8 @@ public class playerController : MonoBehaviour
     public int maxEnergy = 133;
     public int resetEnergy = 0;
     private int currentEnergy;
+    private bool start_Timer3;
 
-    public GameObject R;
-
-    public Image rFill_c;
-    public GameObject rFill;
-    public EnergyLine energyLine;
 
     void Start()
     {
@@ -61,10 +57,11 @@ public class playerController : MonoBehaviour
         energyBar.SetMaxEnergy(maxEnergy);
         energyBar.SetResetEnergy(resetEnergy);
 
-        rFill_c.GetComponent<Renderer>();
+
 
         // 載入全域變數
         currentEnergy = energyCollect.currentEnergy;
+        start_Timer3 = energyCollect.start_Timer3;
 
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         scale = transform.localScale;
@@ -102,35 +99,6 @@ public class playerController : MonoBehaviour
         {
 
         }
-
-       /* else if (Input.GetMouseButtonDown(1))
-        {
-            currentEnergy -= 1;
-            energyBar.SetEnergy(currentEnergy);
-
-            if (energyBar.slider.value == 12)
-            {
-                R.transform.position += new Vector3(-46.6f, 0, 0);
-                energyLine.SetEnergy(2);
-
-                rFill_c.color = new Color32(255, 255, 255, 255);
-            }
-            else if (energyBar.slider.value == 9)
-            {
-                R.transform.position += new Vector3(-46.6f, 0, 0);
-                energyLine.SetEnergy(1);
-            }
-            else if (energyBar.slider.value == 6)
-            {
-                R.transform.position += new Vector3(-46.6f, 0, 0);
-                energyLine.SetEnergy(0);
-            }
-            else if (energyBar.slider.value == 3)
-            {
-                R.transform.position += new Vector3(-46.6f, 0, 0);
-            }
-        }*/
-
     }
     void ground()
     {
@@ -259,8 +227,11 @@ public class playerController : MonoBehaviour
     IEnumerator waitDestory()
     {
         yield return new WaitForSeconds(waitdes);
-        des.destoryline(); 
-        yield return new WaitForSeconds(10);
+        des.destoryline();
+        yield return new WaitForSeconds(7);
+        start_Timer3 = true;
+        energyCollect.start_Timer3 = start_Timer3;
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("mainmenu");
     }
     IEnumerator waitDeath()
@@ -323,11 +294,6 @@ public class playerController : MonoBehaviour
             {
                 currentEnergy = currentEnergy + 1;
                 energyCollect.currentEnergy = currentEnergy;
-
-                if (currentEnergy == 133)
-                {
-                    rFill.SetActive(true);
-                }
             }
         }
     }
