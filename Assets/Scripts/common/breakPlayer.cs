@@ -49,7 +49,7 @@ public class breakPlayer : MonoBehaviour
             else if (collision.transform.name == "3Dplayer" && scene.name == "s1" && collision.transform.GetComponent<playerController>().Status == playerController.playermove.red1)
             {                
                 collision.transform.GetComponent<playerController>().Status = playerController.playermove.death;
-                collision.transform.GetComponent<playerController>().forDeath();
+                collision.transform.GetComponent<playerController>().forDeaththird();
             }
             else if (collision.transform.name == "3Dplayer" && scene.name == "s2" && collision.transform.GetComponent<playerControllerS2>().Status == playerControllerS2.playermove.red1)
             {
