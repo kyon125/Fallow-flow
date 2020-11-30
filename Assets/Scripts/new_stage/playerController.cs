@@ -46,22 +46,26 @@ public class playerController : MonoBehaviour
     public EnergyBar energyBar;
     public int maxEnergy = 133;
     public int resetEnergy = 0;
-    public int currentEnergy;
+    private int currentEnergy;
 
     public GameObject R;
 
     public Image rFill_c;
     public GameObject rFill;
-
     public EnergyLine energyLine;
-
-    Color colorStart = Color.blue;
-    Color colorEnd = Color.green;
-    float duration = 1.0f;
-    public Renderer rend;
 
     void Start()
     {
+        // 能量
+        currentEnergy = resetEnergy;
+        energyBar.SetMaxEnergy(maxEnergy);
+        energyBar.SetResetEnergy(resetEnergy);
+
+        rFill_c.GetComponent<Renderer>();
+
+        // 載入全域變數
+        currentEnergy = energyCollect.currentEnergy;
+
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         scale = transform.localScale;
         rb = transform.GetComponent<Rigidbody>();
@@ -69,21 +73,7 @@ public class playerController : MonoBehaviour
         if (Status == playermove.red1)
         {
             StartCoroutine(r1Musicplay(sm_time1));
-        }
-
-        // 能量
-        currentEnergy = resetEnergy;
-        energyBar.SetMaxEnergy(maxEnergy);
-        energyBar.SetResetEnergy(resetEnergy);
-
-        energyLine.SetMaxEnergy(3);
-        energyLine.SetEnergy(3);
-
-        rFill_c.GetComponent<Renderer>();
-
-
-        rend = GetComponent<Renderer>();
-        rend.material.color = Color.blue;
+        }     
     }
 
     // Update is called once per frame
@@ -333,8 +323,8 @@ public class playerController : MonoBehaviour
         {
             if (currentEnergy < maxEnergy)
             {
-                currentEnergy += 1;
-                energyBar.SetEnergy(currentEnergy);
+                currentEnergy = currentEnergy + 1;
+                energyCollect.currentEnergy = currentEnergy;
 
                 if (currentEnergy == 133)
                 {

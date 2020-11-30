@@ -9,6 +9,8 @@ public class EnergyBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+    
+
     public void SetMaxEnergy(int energy)
     {
         slider.maxValue = energy;
@@ -26,5 +28,5 @@ public class EnergyBar : MonoBehaviour
         slider.value = energy;
 
         fill.color = gradient.Evaluate(1f);
-    }
+    }    
 }

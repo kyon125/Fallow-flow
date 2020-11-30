@@ -14,9 +14,15 @@ public class DesotybottomLine : MonoBehaviour
     bool clear, godown;
     int count;
     Scene scene;
+
+    private int currentEnergy;
+
     void Start()
     {
         scene = SceneManager.GetActiveScene();
+
+          // 載入全域變數
+        currentEnergy = energyCollect.currentEnergy;
     }
 
     // Update is called once per frame
@@ -56,7 +62,12 @@ public class DesotybottomLine : MonoBehaviour
                     hit.transform.parent = transform.GetChild(0);
                 }
             }
+
+            // 消除方塊加分
             Destroy(transform.GetChild(0).gameObject);
+            currentEnergy = currentEnergy + 7;
+            energyCollect.currentEnergy = currentEnergy;
+
             timer = 0;
             clear = true;
             godown = true;            
