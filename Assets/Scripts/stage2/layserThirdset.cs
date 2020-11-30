@@ -24,19 +24,19 @@ public class layserThirdset : MonoBehaviour
             {
                 case (laycolor.red):
                     {
-                        if (other.GetComponent<playerControllerS2>().playecolor != playerControllerS2.Playecolor.red)
+                        if (other.GetComponent<playerControllerS3>().playecolor != playerControllerS3.Playecolor.red)
                         {
                             print("dead");
-                            other.GetComponent<playerControllerS2>().forDeaththird();
+                            other.GetComponent<playerControllerS3>().forDeaththird();
                         }
                         
                         break;
                     }
                 case (laycolor.green):
                     {
-                        if (other.GetComponent<playerControllerS2>().playecolor != playerControllerS2.Playecolor.green)
+                        if (other.GetComponent<playerControllerS3>().playecolor != playerControllerS3.Playecolor.green)
                         {
-                            other.GetComponent<playerControllerS2>().forDeaththird();
+                            other.GetComponent<playerControllerS3>().forDeaththird();
                         }
                         break;
                     }

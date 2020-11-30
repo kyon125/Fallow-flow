@@ -41,6 +41,11 @@ public class breakPlayer : MonoBehaviour
                 collision.transform.GetComponent<playerControllerS2>().Status = playerControllerS2.playermove.death;
                 collision.transform.GetComponent<playerControllerS2>().forDeath();
             }
+            else if (collision.transform.name == "Player" && scene.name == "s3" && collision.transform.GetComponent<playerControllerS3>().Status == playerControllerS3.playermove.red2)
+            {
+                collision.transform.GetComponent<playerControllerS3>().Status = playerControllerS3.playermove.death;
+                collision.transform.GetComponent<playerControllerS3>().forDeath();
+            }
             else if (collision.transform.name == "3Dplayer" && scene.name == "s1" && collision.transform.GetComponent<playerController>().Status == playerController.playermove.red1)
             {                
                 collision.transform.GetComponent<playerController>().Status = playerController.playermove.death;
@@ -50,6 +55,11 @@ public class breakPlayer : MonoBehaviour
             {
                 collision.transform.GetComponent<playerControllerS2>().Status = playerControllerS2.playermove.death;
                 collision.transform.GetComponent<playerControllerS2>().forDeaththird();
+            }
+            else if (collision.transform.name == "3Dplayer" && scene.name == "s3" && collision.transform.GetComponent<playerControllerS3>().Status == playerControllerS3.playermove.red1)
+            {
+                collision.transform.GetComponent<playerControllerS3>().Status = playerControllerS3.playermove.death;
+                collision.transform.GetComponent<playerControllerS3>().forDeaththird();
             }
         }        
     }
