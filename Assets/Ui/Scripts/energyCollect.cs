@@ -14,10 +14,12 @@ public class energyCollect : MonoBehaviour
     public GameObject rFill;
     public EnergyLine energyLine;
 
+    public GameObject rectTransform;
 
     int timer_i = 0;
 
     public static bool start_Timer3 = false;
+    public static bool isEnergyMove = false;
 
     private void Start()
     {
@@ -28,6 +30,11 @@ public class energyCollect : MonoBehaviour
     {
 
         energyBar.SetEnergy(currentEnergy);
+
+        if (isEnergyMove)
+        {
+            StartCoroutine("energyMove");
+        }
 
         if (start_Timer3)
         {
@@ -67,25 +74,45 @@ public class energyCollect : MonoBehaviour
 
         if (energyBar.slider.value == 108)
         {
-            R.transform.position += new Vector3(-100, 0, 0);
+            R.transform.position += new Vector3(-103, 0, 0);
 
             energyLine.SetEnergy(2);
         }
         else if (energyBar.slider.value == 83)
         {
-            R.transform.position += new Vector3(-100, 0, 0);
+            R.transform.position += new Vector3(-103, 0, 0);
 
             energyLine.SetEnergy(1);
         }
         else if (energyBar.slider.value == 58)
         {
-            R.transform.position += new Vector3(-100, 0, 0);
+            R.transform.position += new Vector3(-103, 0, 0);
 
             energyLine.SetEnergy(0);
         }
         else if (energyBar.slider.value == 33)
         {
-            R.transform.position += new Vector3(-100, 0, 0);
+            R.transform.position += new Vector3(-103, 0, 0);
+            start_Timer3 = false;
         }
+    }
+
+    IEnumerator energyMove()
+    {
+        yield return null;
+
+        Vector2 aPos = rectTransform.transform.position;
+        Vector2 aPosScale = rectTransform.transform.localScale;
+
+        if (aPos.x >= 1489 && aPos.y >= 781) 
+        {
+            aPos += new Vector2(-37, -39.5f);
+        }
+        else
+        {
+            isEnergyMove = false;
+        }
+
+        rectTransform.transform.position = aPos;
     }
 }

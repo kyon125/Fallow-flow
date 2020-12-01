@@ -46,8 +46,11 @@ public class playerController : MonoBehaviour
     public EnergyBar energyBar;
     public int maxEnergy = 133;
     public int resetEnergy = 0;
+
+    // 外部參數
     private int currentEnergy;
     private bool start_Timer3;
+    private bool isEnergyMove;
 
 
     void Start()
@@ -62,6 +65,7 @@ public class playerController : MonoBehaviour
         // 載入全域變數
         currentEnergy = energyCollect.currentEnergy;
         start_Timer3 = energyCollect.start_Timer3;
+        isEnergyMove = energyCollect.isEnergyMove;
 
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         scale = transform.localScale;
@@ -231,7 +235,10 @@ public class playerController : MonoBehaviour
         yield return new WaitForSeconds(7);
         start_Timer3 = true;
         energyCollect.start_Timer3 = start_Timer3;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
+        isEnergyMove = true;
+        energyCollect.isEnergyMove = isEnergyMove;
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("mainmenu");
     }
     IEnumerator waitDeath()
