@@ -221,7 +221,6 @@ public class playerControllerS3 : MonoBehaviour
     {
         transform.DOKill();
         transform.DOBlendableMoveBy(new Vector3(0, 0, F), F_time).SetEase(Ease.Linear);
-        songtime = PlayerPrefs.GetFloat("songtime");
         red1.Play();
     }
     public void trunMoveend()
@@ -243,15 +242,16 @@ public class playerControllerS3 : MonoBehaviour
     }
     public void goTored2()
     {
-        StartCoroutine(changered2(23));
+        StartCoroutine(changered2(0.5f));
     }
     IEnumerator changered2(float time)
     {
         transform.DOKill();
         transform.GetComponent<Rigidbody>().isKinematic = true;
-        yield return new WaitForSeconds(time);
-        Status = playermove.inpass;
         PlayerPrefs.SetFloat("songtime", red1.time);
+        yield return new WaitForSeconds(time);
+        Status = playermove.red2;
+        
         main.orthographic = true;
         for (int i = 0; i < secand.Count; i++)
         {
