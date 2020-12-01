@@ -57,9 +57,9 @@ public class playerControllerS2 : MonoBehaviour
     void Start()
     {
         // 能量
-        currentEnergy = resetEnergy;
-        energyBar.SetMaxEnergy(maxEnergy);
-        energyBar.SetResetEnergy(resetEnergy);
+        //currentEnergy = resetEnergy;
+        //energyBar.SetMaxEnergy(maxEnergy);
+        //energyBar.SetResetEnergy(resetEnergy);
 
         // 載入全域變數
         currentEnergy = energyCollect.currentEnergy;
@@ -164,8 +164,9 @@ public class playerControllerS2 : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 4))
             {
-                transform.DOBlendableLocalMoveBy(4 * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
                 uptime = 0;
+                transform.DOBlendableLocalMoveBy(4 * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
+                
                 isup = true;
                 //Debug.DrawLine(ray.origin, hit.point, Color.red);
             }
@@ -180,6 +181,7 @@ public class playerControllerS2 : MonoBehaviour
         {
             transform.DOBlendableLocalMoveBy(4 * Vector3.back, 0.1f).SetEase(Ease.OutQuad);
             uptime = 0;
+            print(uptime);
             //Debug.DrawLine(ray.origin, hit.point, Color.red);
         }
         if (Physics.Raycast(ray, out hit, 4, layerMask))

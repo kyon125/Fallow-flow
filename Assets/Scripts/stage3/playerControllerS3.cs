@@ -73,21 +73,11 @@ public class playerControllerS3 : MonoBehaviour
         else if (Status == playermove.red2)
         {
             red2_control();
-            red2gravity();
+            //red2gravity();
             if (timer >= beatime)
             {
                 timer = timer - beatime;
-            }
-            if (color == gameColor.red)
-            {
-                redObj.SetActive(true);
-                greenObj.SetActive(false);
-            }
-            else if (color == gameColor.green)
-            {
-                redObj.SetActive(false);
-                greenObj.SetActive(true);
-            }
+            }            
         }
         else if (Status == playermove.red2crash)
         {
@@ -235,9 +225,8 @@ public class playerControllerS3 : MonoBehaviour
     {
         transform.DOKill();
         transform.DOBlendableMoveBy(new Vector3(0, 0, F), F_time).SetEase(Ease.Linear);
+        songtime = PlayerPrefs.GetFloat("songtime");
         red1.Play();
-        songtime = PlayerPrefs.GetFloat("songtmoe");
-        print(songtime);
     }
     public void trunMoveend()
     {
@@ -258,14 +247,11 @@ public class playerControllerS3 : MonoBehaviour
     }
     public void goTored2()
     {
-        StartCoroutine(changered2(5));
+        StartCoroutine(changered2(24));
     }
     IEnumerator changered2(float time)
     {
-        print(red1.time);
         yield return new WaitForSeconds(time);
-        
-        PlayerPrefs.SetFloat("songtime", red1.time);
         main.orthographic = true;
         for (int i = 0; i < secand.Count; i++)
         {
@@ -275,6 +261,10 @@ public class playerControllerS3 : MonoBehaviour
         {
             one[i].SetActive(false);
         }
+    }
+    IEnumerator getThreecolor()
+    {
+        yield return new WaitForSeconds(5f);
     }
     IEnumerator r1Musicplay(float time)
     {
