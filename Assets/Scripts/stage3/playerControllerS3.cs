@@ -59,6 +59,18 @@ public class playerControllerS3 : MonoBehaviour
         {
             StartCoroutine(r1Musicplay(sm_time1));
         }
+        else if (Status == playermove.red2)
+        {
+            songtime = PlayerPrefs.GetFloat("songtime");
+            red1.Play();
+            red1.time = 30.4f;
+        }
+        else if (Status == playermove.inpass)
+        {
+            songtime = PlayerPrefs.GetFloat("songtime");
+            red1.Play();
+            red1.time = songtime-3;
+        }
     }
 
     // Update is called once per frame
@@ -107,37 +119,53 @@ public class playerControllerS3 : MonoBehaviour
     }
     void red2_control()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow)&& transform.position.x<69)
         {
-            Ray ray = new Ray(transform.position, Vector3.right);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 4, layerMask) == false)
-            {
-                transform.DOBlendableLocalMoveBy(4 * Vector3.right, 0.1f).SetEase(Ease.OutQuad);
-                //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            }
+            transform.DOBlendableLocalMoveBy(40* Vector3.right * Time.deltaTime, 0.1f).SetEase(Ease.OutQuad);
+            //Ray ray = new Ray(transform.position, Vector3.right);
+            //RaycastHit hit;
+            //if (Physics.Raycast(ray, out hit, 4, layerMask) == false)
+            //{
+            //    transform.DOBlendableLocalMoveBy(4 * Vector3.right, 0.1f).SetEase(Ease.OutQuad);
+            //    //Debug.DrawLine(ray.origin, hit.point, Color.red);
+            //}
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -69)
         {
-            Ray ray = new Ray(transform.position, Vector3.left);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 4, layerMask) == false)
-            {
-                transform.DOBlendableLocalMoveBy(4 * Vector3.left, 0.1f).SetEase(Ease.OutQuad);
-                //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            }
+            transform.DOBlendableLocalMoveBy(40 * Time.deltaTime * Vector3.left, 0.1f).SetEase(Ease.OutQuad);
+            //Ray ray = new Ray(transform.position, Vector3.left);
+            //RaycastHit hit;
+            //if (Physics.Raycast(ray, out hit, 4, layerMask) == false)
+            //{
+            //    transform.DOBlendableLocalMoveBy(4 * Vector3.left, 0.1f).SetEase(Ease.OutQuad);
+            //    //Debug.DrawLine(ray.origin, hit.point, Color.red);
+            //}
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.UpArrow) && transform.position.z<4297)
         {
-            Ray ray = new Ray(transform.position, Vector3.back);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 4))
-            {
-                transform.DOBlendableLocalMoveBy(4 * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
-                uptime = 0;
-                isup = true;
-                //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            }
+            transform.DOBlendableLocalMoveBy(40 * Time.deltaTime * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
+            //Ray ray = new Ray(transform.position, Vector3.back);
+            //RaycastHit hit;
+            //if (Physics.Raycast(ray, out hit, 4))
+            //{
+            //    transform.DOBlendableLocalMoveBy(4 * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
+            //    uptime = 0;
+            //    isup = true;
+            //    //Debug.DrawLine(ray.origin, hit.point, Color.red);
+            //}
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) && transform.position.z > 4223)
+        {
+            transform.DOBlendableLocalMoveBy(40 * Time.deltaTime * Vector3.back, 0.1f).SetEase(Ease.OutQuad);
+            //Ray ray = new Ray(transform.position, Vector3.back);
+            //RaycastHit hit;
+            //if (Physics.Raycast(ray, out hit, 4))
+            //{
+            //    transform.DOBlendableLocalMoveBy(4 * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
+            //    uptime = 0;
+            //    isup = true;
+            //    //Debug.DrawLine(ray.origin, hit.point, Color.red);
+            //}
         }
         conColor();
     }
@@ -247,11 +275,15 @@ public class playerControllerS3 : MonoBehaviour
     }
     public void goTored2()
     {
-        StartCoroutine(changered2(24));
+        StartCoroutine(changered2(23));
     }
     IEnumerator changered2(float time)
     {
+        transform.DOKill();
+        transform.GetComponent<Rigidbody>().isKinematic = true;
         yield return new WaitForSeconds(time);
+        Status = playermove.inpass;
+        PlayerPrefs.SetFloat("songtime", red1.time);
         main.orthographic = true;
         for (int i = 0; i < secand.Count; i++)
         {
@@ -260,11 +292,11 @@ public class playerControllerS3 : MonoBehaviour
         for (int i = 0; i < one.Count; i++)
         {
             one[i].SetActive(false);
-        }
+        }    
     }
     IEnumerator getThreecolor()
-    {
-        yield return new WaitForSeconds(5f);
+    {        
+        yield return new WaitForSeconds(3f);
     }
     IEnumerator r1Musicplay(float time)
     {

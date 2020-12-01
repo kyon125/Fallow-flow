@@ -35,9 +35,8 @@ public class thidTetrismove : MonoBehaviour
                     {
                         for (int i = 0; i < transform.childCount; i++)
                         {
-                            kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_90955845", 0);
-                            kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_443DFAAE", 0);
-                            kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 0.1f);
+                            kids[i].GetComponent<MeshRenderer>().material.SetColor("Color_F01962BA",new Color(255,0,0));
+
                         }
                         break;
                     }
@@ -45,7 +44,8 @@ public class thidTetrismove : MonoBehaviour
                     {
                         for (int i = 0; i < transform.childCount; i++)
                         {
-                            kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 0.2F);
+                            kids[i].GetComponent<MeshRenderer>().material.SetColor("Color_F01962BA", new Color(0, 0, 0));
+
                         }
                         break;
                     }
@@ -53,7 +53,8 @@ public class thidTetrismove : MonoBehaviour
                     {
                         for (int i = 0; i < transform.childCount; i++)
                         {
-                            kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 0.3F);
+                            kids[i].GetComponent<MeshRenderer>().material.SetColor("Color_F01962BA", new Color(0, 0, 0));
+
                         }
                         break;
                     }
@@ -61,7 +62,8 @@ public class thidTetrismove : MonoBehaviour
                     {
                         for (int i = 0; i < transform.childCount; i++)
                         {
-                            kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 0.4F);
+                            kids[i].GetComponent<MeshRenderer>().material.SetColor("Color_F01962BA", new Color(0, 0, 0));
+
                         }
                         break;
                     }
@@ -71,7 +73,7 @@ public class thidTetrismove : MonoBehaviour
                         {
                             for (int i = 0; i < transform.childCount; i++)
                             {
-                                kids[i].GetComponent<MeshRenderer>().material.SetFloat("Vector1_CC5FEA5A", 0.5F);
+                                kids[i].GetComponent<MeshRenderer>().material.SetColor("Color_F01962BA", new Color(0, 0, 0));
                             }
                             transform.DOBlendableMoveBy(new Vector3(movePos, 0, 0), moveTime);
                             cinemachineShake.cameraShake.goShake(7, 0.5f);
