@@ -57,9 +57,9 @@ public class playerControllerS2 : MonoBehaviour
     void Start()
     {
         // 能量
-        currentEnergy = resetEnergy;
-        energyBar.SetMaxEnergy(maxEnergy);
-        energyBar.SetResetEnergy(resetEnergy);
+        //currentEnergy = resetEnergy;
+        //energyBar.SetMaxEnergy(maxEnergy);
+        //energyBar.SetResetEnergy(resetEnergy);
 
         // 載入全域變數
         currentEnergy = energyCollect.currentEnergy;
