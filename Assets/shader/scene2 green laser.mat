@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: R_layser
+  m_Name: scene2 green laser
   m_Shader: {fileID: -6465566751694194690, guid: fa8e33b0e5452a3429f11327d887c043,
     type: 3}
   m_ShaderKeywords: 
@@ -25,8 +25,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_269B52AF: 0.54
-    - Vector1_93D8AAA7: 7.21
+    - Vector1_269B52AF: 10
+    - Vector1_93D8AAA7: 6
     m_Colors:
-    - Color_40CEFF9B: {r: 0.16273585, g: 0, b: 0.020711815, a: 1}
-    - Vector2_1BFD635B: {r: 1.24, g: 0, b: 0, a: 0}
+    - Color_40CEFF9B: {r: 0, g: 0.3679245, b: 0.009744644, a: 0}
+    - Vector2_1BFD635B: {r: 1, g: 0, b: 0, a: 0}

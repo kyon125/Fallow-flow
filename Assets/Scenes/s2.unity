@@ -8937,8 +8937,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227292542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5000}
-  m_LocalScale: {x: 0.4, y: 2, z: 1000}
+  m_LocalPosition: {x: 0, y: -0.05, z: 5000}
+  m_LocalScale: {x: 500, y: 2, z: 1000}
   m_Children: []
   m_Father: {fileID: 907984224}
   m_RootOrder: 2
@@ -8975,7 +8975,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1fa2a884d147d9c488397525630e13db, type: 2}
+  - {fileID: 2100000, guid: a837ff1c663da2041af130e70874d656, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10219,7 +10219,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+      objectReference: {fileID: 2100000, guid: e067370ba2441e541b2d027a4ba74c50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1991b1a76af82543953b246a1ade94b, type: 3}
 --- !u!1001 &260310538
@@ -12339,7 +12339,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1fa2a884d147d9c488397525630e13db, type: 2}
+  - {fileID: 2100000, guid: a837ff1c663da2041af130e70874d656, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14801,25 +14801,13 @@ Transform:
   m_Father: {fileID: 188512118}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &402763840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1226007156755778613, guid: b1991b1a76af82543953b246a1ade94b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1514330053}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &402763841 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1226007156755778602, guid: b1991b1a76af82543953b246a1ade94b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1514330053}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &402763842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402763840}
+  m_GameObject: {fileID: 1226007155786718192}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68ddd9fb57a121948811fbebe5fe78ab, type: 3}
@@ -14832,7 +14820,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402763840}
+  m_GameObject: {fileID: 1226007155786718192}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -17568,7 +17556,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76f9622c78d32a64a9b729f17ef73b3e, type: 2}
+  - {fileID: 2100000, guid: 566725f7d331a3849abd2184c836853e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18348,7 +18336,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3764706}
+  m_Color: {r: 0.6688323, g: 0.8490566, b: 0.70538837, a: 0.3764706}
   m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
@@ -34863,7 +34851,7 @@ MonoBehaviour:
   m_FocusTracking: 0
   m_FocusTarget: {fileID: 0}
   m_FocusOffset: 0
-  m_Profile: {fileID: 11400000, guid: 9579ea3ce08b2d840ad203b8a899fdee, type: 2}
+  m_Profile: {fileID: 11400000, guid: e47c63a95c1955e41a0881c1f7e5c205, type: 2}
 --- !u!114 &946580263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41095,7 +41083,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.07953769, g: 0.06367926, b: 0.084905684, a: 0.7294118}
+  m_BackGroundColor: {r: 0.9622642, g: 0.74706304, b: 0.54013884, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -42887,7 +42875,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+      objectReference: {fileID: 2100000, guid: e067370ba2441e541b2d027a4ba74c50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1991b1a76af82543953b246a1ade94b, type: 3}
 --- !u!1 &1146906839
@@ -56508,7 +56496,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76f9622c78d32a64a9b729f17ef73b3e, type: 2}
+  - {fileID: 2100000, guid: 566725f7d331a3849abd2184c836853e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -58580,7 +58568,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+      objectReference: {fileID: 2100000, guid: e067370ba2441e541b2d027a4ba74c50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1991b1a76af82543953b246a1ade94b, type: 3}
 --- !u!4 &1514576529 stripped
@@ -62471,7 +62459,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+      objectReference: {fileID: 2100000, guid: e067370ba2441e541b2d027a4ba74c50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1991b1a76af82543953b246a1ade94b, type: 3}
 --- !u!1 &1600753434 stripped
@@ -65745,7 +65733,7 @@ Transform:
   - {fileID: 160409203}
   - {fileID: 1704195486}
   - {fileID: 1762253773}
-  - {fileID: 402763841}
+  - {fileID: 1226007155786718191}
   - {fileID: 2137516983}
   - {fileID: 1033776224}
   - {fileID: 2084208269}
@@ -67219,7 +67207,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3764706}
+  m_Color: {r: 0.6688323, g: 0.8490566, b: 0.70538837, a: 0.3764706}
   m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
@@ -71170,7 +71158,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+      objectReference: {fileID: 2100000, guid: e067370ba2441e541b2d027a4ba74c50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1991b1a76af82543953b246a1ade94b, type: 3}
 --- !u!1 &1842201813
@@ -73151,7 +73139,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1fa2a884d147d9c488397525630e13db, type: 2}
+  - {fileID: 2100000, guid: a837ff1c663da2041af130e70874d656, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74022,7 +74010,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+      objectReference: {fileID: 2100000, guid: e067370ba2441e541b2d027a4ba74c50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1991b1a76af82543953b246a1ade94b, type: 3}
 --- !u!4 &1904532772 stripped
@@ -76835,7 +76823,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+      objectReference: {fileID: 2100000, guid: e067370ba2441e541b2d027a4ba74c50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1991b1a76af82543953b246a1ade94b, type: 3}
 --- !u!4 &1989845318 stripped
@@ -77425,7 +77413,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+      objectReference: {fileID: 2100000, guid: e067370ba2441e541b2d027a4ba74c50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1991b1a76af82543953b246a1ade94b, type: 3}
 --- !u!4 &2001410964 stripped
@@ -80975,7 +80963,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+      objectReference: {fileID: 2100000, guid: e067370ba2441e541b2d027a4ba74c50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1991b1a76af82543953b246a1ade94b, type: 3}
 --- !u!4 &2085485397 stripped
@@ -83680,3 +83668,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9006372280845165231, guid: de8601de5886f25449bba718e9568bb8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: de8601de5886f25449bba718e9568bb8, type: 3}
+--- !u!4 &1226007155786718191 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1226007156755778602, guid: b1991b1a76af82543953b246a1ade94b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1514330053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1226007155786718192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1226007156755778613, guid: b1991b1a76af82543953b246a1ade94b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1514330053}
+  m_PrefabAsset: {fileID: 0}
