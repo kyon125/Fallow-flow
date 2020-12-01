@@ -33,7 +33,7 @@ public class changeStage : MonoBehaviour
         else if (other.gameObject.tag == "Player" && scene.name == "s3")
         {
             print("aa");
-            other.gameObject.GetComponent<playerControllerS2>().goTored2();
+            other.gameObject.GetComponent<playerControllerS3>().goTored2();
         }
     }
 }

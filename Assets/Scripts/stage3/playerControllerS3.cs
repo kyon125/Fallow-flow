@@ -11,7 +11,7 @@ public class playerControllerS3 : MonoBehaviour
     [Header("音樂")]
     public AudioSource red1, red2;
     [Header("計時")]
-    float timer, beatime, uptime;
+    float timer, beatime, uptime , songtime;
     public float Bpm, waitdes, sm_time1, sm_time2;
     [Header("往前")]
     public float F;
@@ -236,7 +236,8 @@ public class playerControllerS3 : MonoBehaviour
         transform.DOKill();
         transform.DOBlendableMoveBy(new Vector3(0, 0, F), F_time).SetEase(Ease.Linear);
         red1.Play();
-
+        songtime = PlayerPrefs.GetFloat("songtmoe");
+        print(songtime);
     }
     public void trunMoveend()
     {
@@ -261,9 +262,10 @@ public class playerControllerS3 : MonoBehaviour
     }
     IEnumerator changered2(float time)
     {
-        DOTween.To(() => red1.volume, x => red1.volume = x, 0, 3f);
+        print(red1.time);
         yield return new WaitForSeconds(time);
-        red1.Stop();
+        
+        PlayerPrefs.SetFloat("songtime", red1.time);
         main.orthographic = true;
         for (int i = 0; i < secand.Count; i++)
         {
