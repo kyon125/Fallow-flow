@@ -63,7 +63,7 @@ public class playerControllerS3 : MonoBehaviour
         {
             songtime = PlayerPrefs.GetFloat("songtime");
             red1.Play();
-            red1.time = 30.4f;
+            red1.time = 46;
         }
         else if (Status == playermove.inpass)
         {
@@ -248,10 +248,9 @@ public class playerControllerS3 : MonoBehaviour
     {
         transform.DOKill();
         transform.GetComponent<Rigidbody>().isKinematic = true;
+       
         PlayerPrefs.SetFloat("songtime", red1.time);
-        yield return new WaitForSeconds(time);
-        Status = playermove.red2;
-        
+        yield return new WaitForSeconds(0);        
         main.orthographic = true;
         for (int i = 0; i < secand.Count; i++)
         {

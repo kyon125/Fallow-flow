@@ -24,27 +24,54 @@ public class layserThirdset : MonoBehaviour
         {
             if (scene.name == "s3")
             {
-                switch (lay)
+                if (other.GetComponent<playerControllerS3>().Status == playerControllerS3.playermove.red2)
                 {
-                    case (laycolor.red):
-                        {
-                            if (other.GetComponent<playerControllerS3>().playecolor != playerControllerS3.Playecolor.red)
+                    switch (lay)
+                    {
+                        case (laycolor.red):
                             {
-                                print("dead");
-                                other.GetComponent<playerControllerS3>().forDeaththird();
-                            }
+                                if (other.GetComponent<playerControllerS3>().playecolor != playerControllerS3.Playecolor.red)
+                                {
+                                    print("dead");
+                                    other.GetComponent<playerControllerS3>().forDeath();
+                                }
 
-                            break;
-                        }
-                    case (laycolor.green):
-                        {
-                            if (other.GetComponent<playerControllerS3>().playecolor != playerControllerS3.Playecolor.green)
-                            {
-                                other.GetComponent<playerControllerS3>().forDeaththird();
+                                break;
                             }
-                            break;
-                        }
+                        case (laycolor.green):
+                            {
+                                if (other.GetComponent<playerControllerS3>().playecolor != playerControllerS3.Playecolor.green)
+                                {
+                                    other.GetComponent<playerControllerS3>().forDeath();
+                                }
+                                break;
+                            }
+                    }
                 }
+                else
+                {
+                    switch (lay)
+                    {
+                        case (laycolor.red):
+                            {
+                                if (other.GetComponent<playerControllerS3>().playecolor != playerControllerS3.Playecolor.red)
+                                {
+                                    print("dead");
+                                    other.GetComponent<playerControllerS3>().forDeaththird();
+                                }
+
+                                break;
+                            }
+                        case (laycolor.green):
+                            {
+                                if (other.GetComponent<playerControllerS3>().playecolor != playerControllerS3.Playecolor.green)
+                                {
+                                    other.GetComponent<playerControllerS3>().forDeaththird();
+                                }
+                                break;
+                            }
+                    }
+                }                
             }
             else if (scene.name == "s2")
             {
