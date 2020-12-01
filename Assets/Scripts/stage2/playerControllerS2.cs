@@ -46,8 +46,12 @@ public class playerControllerS2 : MonoBehaviour
     public EnergyBar energyBar;
     public int maxEnergy = 72;
     public int resetEnergy = 0;
+   
+    // 外部參數
     private int currentEnergy;
- 
+    private bool start_Timer2;
+    private bool isEnergyMove;
+    private bool plusSwitch2;
 
 
     int layerMask = 1 << 8;
@@ -63,6 +67,9 @@ public class playerControllerS2 : MonoBehaviour
 
         // 載入全域變數
         currentEnergy = energyCollect.currentEnergy;
+        start_Timer2 = energyCollect.start_Timer2;
+        isEnergyMove = energyCollect.isEnergyMove;
+        plusSwitch2 = DesotybottomLine.plusSwitch2;
 
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         render = transform.GetComponent<SkinnedMeshRenderer>();
@@ -276,8 +283,16 @@ public class playerControllerS2 : MonoBehaviour
     IEnumerator waitDestory()
     {
         yield return new WaitForSeconds(waitdes);
+        plusSwitch2 = true;
+        DesotybottomLine.plusSwitch2 = plusSwitch2;
         des.destoryline();
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(7);
+        start_Timer2 = true;
+        energyCollect.start_Timer2 = start_Timer2;
+        yield return new WaitForSeconds(3);
+        isEnergyMove = true;
+        energyCollect.isEnergyMove = isEnergyMove;
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("mainmenu");
     }
     IEnumerator waitDeath()
