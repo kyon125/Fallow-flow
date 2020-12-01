@@ -30,5 +30,10 @@ public class changeStage : MonoBehaviour
             print("aa");
             other.gameObject.GetComponent<playerControllerS2>().goTored2();
         }
+        else if (other.gameObject.tag == "Player" && scene.name == "s3")
+        {
+            print("aa");
+            other.gameObject.GetComponent<playerControllerS2>().goTored2();
+        }
     }
 }

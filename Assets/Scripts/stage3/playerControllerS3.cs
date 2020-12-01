@@ -167,41 +167,49 @@ public class playerControllerS3 : MonoBehaviour
         }
     }
     void thirdConcolor()
-    { 
-        if (Input.GetKeyDown(KeyCode.Z) && colornum > 0)
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            colornum--;
+            color = gameColor.red;
+            playecolor = Playecolor.red;
+            render.material = m_red;
         }
-        else if (Input.GetKeyDown(KeyCode.C) && colornum < 2)
+        else if (Input.GetKeyDown(KeyCode.C))
         {
-            colornum++;
+            color = gameColor.green;
+            playecolor = Playecolor.green;
+            render.material = m_green;
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            color = gameColor.blue;
+            playecolor = Playecolor.blue;
+            render.material = m_normal;
         }
         //if (colornum == 0)
-        //{
-        //    color = gameColor.red;
-        //    playecolor = Playecolor.red;
-        //    render.material = m_red;
-        //    redObj.SetActive(false);
-        //    greenObj.SetActive(false);
-        //    blueobj.SetActive(true);
-        //}
-        //else if (colornum == 1)
         //{
         //    color = gameColor.blue;
         //    playecolor = Playecolor.blue;
         //    render.material = m_normal;
-        //    redObj.SetActive(true);
-        //    greenObj.SetActive(false);
-        //    blueobj.SetActive(false);
+        //    //redObj.SetActive(true);
+        //    //greenObj.SetActive(false);
+        //    //blueobj.SetActive(false);            
+        //}
+        //else if (colornum == 1)
+        //{
+            
+        //    //redObj.SetActive(false);
+        //    //greenObj.SetActive(false);
+        //    //blueobj.SetActive(true);
         //}
         //else if (colornum == 2)
         //{
         //    color = gameColor.green;
         //    playecolor = Playecolor.green;
         //    render.material = m_green;
-        //    redObj.SetActive(false);
-        //    greenObj.SetActive(true);
-        //    blueobj.SetActive(false);
+        //    //redObj.SetActive(false);
+        //    //greenObj.SetActive(true);
+        //    //blueobj.SetActive(false);
         //}
     }
     void conColor()
