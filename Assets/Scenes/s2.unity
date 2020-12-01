@@ -3083,8 +3083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &73796316 stripped
@@ -3112,8 +3112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 893197459}
@@ -4182,8 +4182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &103927981 stripped
@@ -4230,8 +4230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &113257654
@@ -5300,8 +5300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &132588101
@@ -6254,8 +6254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &157108451 stripped
@@ -6678,8 +6678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &165699318
@@ -6811,16 +6811,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
---- !u!198 &171393174 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1161738901968753668, guid: 377051a095a0faf418ea3a210c74d027,
-    type: 3}
-  m_PrefabInstance: {fileID: 720543358}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &172818455 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7472715532667033249, guid: 8b836af734d1e9a4b97ac63183346860,
@@ -6846,8 +6840,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &173120724 stripped
@@ -7392,8 +7386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1569484408}
@@ -7737,7 +7731,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: f6967877dbedaee4d833d1e2f7b29156,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: f6967877dbedaee4d833d1e2f7b29156,
         type: 3}
@@ -9487,8 +9481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1699535733}
@@ -10596,8 +10590,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &271855647 stripped
@@ -10967,8 +10961,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &294377572
@@ -11915,8 +11909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &329480554
@@ -14266,8 +14260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &392364033 stripped
@@ -14902,8 +14896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &411052769 stripped
@@ -14931,8 +14925,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 893197459}
@@ -15776,8 +15770,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &445958795 stripped
@@ -16163,8 +16157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &460923484
@@ -17060,8 +17054,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 893197459}
@@ -18128,8 +18122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &542660091 stripped
@@ -20426,8 +20420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &611658772 stripped
@@ -20904,8 +20898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &622238190 stripped
@@ -21232,8 +21226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &632363266 stripped
@@ -21387,8 +21381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 893197459}
@@ -21469,8 +21463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &636082124
@@ -22285,8 +22279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &660604954
@@ -22779,8 +22773,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1569484408}
@@ -25069,155 +25063,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: aa4e69b87eb000b45bbc8c30bce32e67, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae9f6ac21dcd2f7418cfe4d10ac8a7dd, type: 3}
---- !u!1001 &720543358
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1382798112}
-    m_Modifications:
-    - target: {fileID: 409303018732586192, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 478921515259781165, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1161738901968753668, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1161738901968753668, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1161738901968753668, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1161738901968753668, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2933262527485830469, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_Name
-      value: hit effect
-      objectReference: {fileID: 0}
-    - target: {fileID: 2933262527485830469, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290956534457215702, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290956534457215702, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290956534457215702, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290956534457215702, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: ClampVelocityModule.drag.scalar
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290956534457215702, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290956534457215702, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6571551286849840337, guid: 377051a095a0faf418ea3a210c74d027,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 377051a095a0faf418ea3a210c74d027, type: 3}
 --- !u!1 &722347240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2056774625387374592, guid: c856d4e8ba2df2f4694dff2a6441aa9f,
@@ -26854,8 +26699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &751634828 stripped
@@ -27470,8 +27315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &761114446
@@ -28014,8 +27859,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1569484408}
@@ -28660,8 +28505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &788325354
@@ -29164,8 +29009,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 893197459}
@@ -29332,8 +29177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &812325496
@@ -30121,8 +29966,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &823771988 stripped
@@ -30150,8 +29995,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &825150511 stripped
@@ -32135,8 +31980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &872827323
@@ -33306,8 +33151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1699535733}
@@ -34437,8 +34282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 893197459}
@@ -34962,8 +34807,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1699535733}
@@ -36074,8 +35919,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &985154878 stripped
@@ -36210,8 +36055,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &991559814 stripped
@@ -36239,8 +36084,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &992464544 stripped
@@ -36268,8 +36113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &993804349
@@ -36494,7 +36339,7 @@ MonoBehaviour:
   maxEnergy: 72
   resetEnergy: 0
   des: {fileID: 1509913821}
-  deathPs: {fileID: 5189302595483884462, guid: d603ff37d5456b842bfd53818352ad08, type: 3}
+  deathPs: {fileID: 5189302595483884462, guid: aa8899013dfcf0d499c8ae7b477cc8a7, type: 3}
 --- !u!4 &997181964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5262652731204264519, guid: cb8ab65016109174491f3d54b91adfd5,
@@ -37558,8 +37403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1017394363 stripped
@@ -37734,7 +37579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1022086859
 Transform:
   m_ObjectHideFlags: 0
@@ -37792,8 +37637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1027156889 stripped
@@ -38967,8 +38812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &1060644360
@@ -39401,8 +39246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1569484408}
@@ -40081,8 +39926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &1086498063
@@ -40461,8 +40306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1089367785
@@ -41107,7 +40952,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 19
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -41130,8 +40975,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103188141}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.64889145, y: 48.799995, z: 4259.891}
+  m_LocalRotation: {x: -0.02097409, y: -0.0050790845, z: -0.000106554, w: 0.9997671}
+  m_LocalPosition: {x: 5.684342e-14, y: 6.57, z: -10.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42466,8 +42311,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1569484408}
@@ -42497,8 +42342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1135879336
@@ -42639,8 +42484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1138299969 stripped
@@ -42699,8 +42544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 893197459}
@@ -42730,8 +42575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1146134270 stripped
@@ -43786,8 +43631,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1167558200 stripped
@@ -44666,8 +44511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1195182575
@@ -44787,8 +44632,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &1198637672
@@ -47373,8 +47218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1259843373 stripped
@@ -48847,8 +48692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1295845677 stripped
@@ -49331,8 +49176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1314767535 stripped
@@ -50030,8 +49875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1326984083 stripped
@@ -50828,8 +50673,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &1346064669
@@ -51721,8 +51566,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1699535733}
@@ -52470,7 +52315,7 @@ MonoBehaviour:
   maxEnergy: 72
   resetEnergy: 0
   des: {fileID: 1509913821}
-  deathPs: {fileID: 5189302595483884462, guid: d603ff37d5456b842bfd53818352ad08, type: 3}
+  deathPs: {fileID: 5189302595483884462, guid: b7748b2b73c211744b6c9e4081799b8d, type: 3}
 --- !u!54 &1382798115
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52678,8 +52523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1386293692 stripped
@@ -53070,8 +52915,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1395959104 stripped
@@ -54711,8 +54556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 893197459}
@@ -55654,8 +55499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1457955642 stripped
@@ -57011,8 +56856,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1485698064 stripped
@@ -57896,8 +57741,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1503320785
@@ -58803,8 +58648,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1522142495 stripped
@@ -59235,8 +59080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1531573188 stripped
@@ -59750,8 +59595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1544277933 stripped
@@ -60159,8 +60004,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1561572068 stripped
@@ -64310,8 +64155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &1650239890
@@ -64420,8 +64265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1653144560 stripped
@@ -64758,8 +64603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1668355783 stripped
@@ -65236,8 +65081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1677852624 stripped
@@ -65578,8 +65423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &1687908316
@@ -66884,8 +66729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1728066409 stripped
@@ -66932,8 +66777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &1730839807
@@ -67613,12 +67458,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748568905}
   m_CullTransparentMesh: 0
---- !u!198 &1750278827 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4290956534457215702, guid: 377051a095a0faf418ea3a210c74d027,
-    type: 3}
-  m_PrefabInstance: {fileID: 720543358}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1751785190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68025,8 +67864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &1769211565
@@ -68306,8 +68145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1699535733}
@@ -69738,8 +69577,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &1800700656 stripped
@@ -70064,8 +69903,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1569484408}
@@ -73743,8 +73582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1903122093
@@ -73885,8 +73724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1699535733}
@@ -74166,8 +74005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1907476049 stripped
@@ -75208,8 +75047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &1938539603
@@ -75726,8 +75565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1569484408}
@@ -76501,8 +76340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &1984665118
@@ -77470,8 +77309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 1699535733}
@@ -78177,8 +78016,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &2021031664 stripped
@@ -78706,8 +78545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 1
   door:
   - {fileID: 893197459}
@@ -79064,8 +78903,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &2046148673
@@ -79333,8 +79172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &2054977127 stripped
@@ -82037,8 +81876,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1001 &2113172720
@@ -82413,8 +82252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!4 &2128811871 stripped
@@ -83355,8 +83194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ad: {fileID: 946101761}
-  PS: {fileID: 1750278827}
-  PS2: {fileID: 171393174}
+  PS: {fileID: 4290956534810424488}
+  PS2: {fileID: 1161738902401911418}
   hasDoor: 0
   door: []
 --- !u!1 &2143429110 stripped
@@ -83695,6 +83534,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9006372280845165231, guid: de8601de5886f25449bba718e9568bb8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: de8601de5886f25449bba718e9568bb8, type: 3}
+--- !u!198 &1161738902401911418 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4811806163589295280, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+    type: 3}
+  m_PrefabInstance: {fileID: 5969991168315713226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1226007155786718191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1226007156755778602, guid: b1991b1a76af82543953b246a1ade94b,
@@ -83707,3 +83552,78 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1514330053}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &4290956534810424488 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7590009502119318114, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+    type: 3}
+  m_PrefabInstance: {fileID: 5969991168315713226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5969991168315713226
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1382798112}
+    m_Modifications:
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087973629982021785, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821603806146862577, guid: dcd64ff4ab2cf4e499e7a61435008fee,
+        type: 3}
+      propertyPath: m_Name
+      value: S2 hit effect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dcd64ff4ab2cf4e499e7a61435008fee, type: 3}
