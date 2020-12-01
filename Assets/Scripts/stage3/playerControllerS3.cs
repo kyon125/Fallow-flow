@@ -119,53 +119,21 @@ public class playerControllerS3 : MonoBehaviour
     }
     void red2_control()
     {
-        if (Input.GetKey(KeyCode.RightArrow)&& transform.position.x<69)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < 25)
         {
-            transform.DOBlendableLocalMoveBy(40* Vector3.right * Time.deltaTime, 0.1f).SetEase(Ease.OutQuad);
-            //Ray ray = new Ray(transform.position, Vector3.right);
-            //RaycastHit hit;
-            //if (Physics.Raycast(ray, out hit, 4, layerMask) == false)
-            //{
-            //    transform.DOBlendableLocalMoveBy(4 * Vector3.right, 0.1f).SetEase(Ease.OutQuad);
-            //    //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            //}
+            transform.DOBlendableLocalMoveBy(4 * Vector3.right, 0.1f).SetEase(Ease.OutQuad);
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -69)
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)&& transform.position.x > - 25)
         {
-            transform.DOBlendableLocalMoveBy(40 * Time.deltaTime * Vector3.left, 0.1f).SetEase(Ease.OutQuad);
-            //Ray ray = new Ray(transform.position, Vector3.left);
-            //RaycastHit hit;
-            //if (Physics.Raycast(ray, out hit, 4, layerMask) == false)
-            //{
-            //    transform.DOBlendableLocalMoveBy(4 * Vector3.left, 0.1f).SetEase(Ease.OutQuad);
-            //    //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            //}
+            transform.DOBlendableLocalMoveBy(4 * Vector3.left, 0.1f).SetEase(Ease.OutQuad);
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && transform.position.z<4297)
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.z< 4591)
         {
-            transform.DOBlendableLocalMoveBy(40 * Time.deltaTime * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
-            //Ray ray = new Ray(transform.position, Vector3.back);
-            //RaycastHit hit;
-            //if (Physics.Raycast(ray, out hit, 4))
-            //{
-            //    transform.DOBlendableLocalMoveBy(4 * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
-            //    uptime = 0;
-            //    isup = true;
-            //    //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            //}
+            transform.DOBlendableLocalMoveBy(4 * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);           
         }
-        else if (Input.GetKey(KeyCode.DownArrow) && transform.position.z > 4223)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.z > 4561)
         {
-            transform.DOBlendableLocalMoveBy(40 * Time.deltaTime * Vector3.back, 0.1f).SetEase(Ease.OutQuad);
-            //Ray ray = new Ray(transform.position, Vector3.back);
-            //RaycastHit hit;
-            //if (Physics.Raycast(ray, out hit, 4))
-            //{
-            //    transform.DOBlendableLocalMoveBy(4 * Vector3.forward, 0.1f).SetEase(Ease.OutQuad);
-            //    uptime = 0;
-            //    isup = true;
-            //    //Debug.DrawLine(ray.origin, hit.point, Color.red);
-            //}
+            transform.DOBlendableLocalMoveBy(4 * Vector3.back, 0.1f).SetEase(Ease.OutQuad);
         }
         conColor();
     }
