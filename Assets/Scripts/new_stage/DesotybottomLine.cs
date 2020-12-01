@@ -16,6 +16,8 @@ public class DesotybottomLine : MonoBehaviour
     Scene scene;
 
     private int currentEnergy;
+    public static bool plusSwitch1=false;
+    public static bool plusSwitch2=false;
 
     void Start()
     {
@@ -66,13 +68,21 @@ public class DesotybottomLine : MonoBehaviour
             // 消除方塊加分
             Destroy(transform.GetChild(0).gameObject);
 
-            if (currentEnergy <= 133)
+            if (currentEnergy < 133 && plusSwitch1)
             {
                 currentEnergy = currentEnergy + 7;
             }
-            else if (currentEnergy >= 133)
+            else if (currentEnergy >= 133 && plusSwitch1)
             {
                 currentEnergy = 133;
+            }
+            else if (currentEnergy < 72 && plusSwitch2) 
+            {
+                currentEnergy = currentEnergy + 5;
+            }
+            else if (currentEnergy >= 72 && plusSwitch2) 
+            {
+                currentEnergy = 72;
             }
             energyCollect.currentEnergy = currentEnergy;
 

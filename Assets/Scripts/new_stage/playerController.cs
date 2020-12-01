@@ -49,8 +49,9 @@ public class playerController : MonoBehaviour
 
     // 外部參數
     private int currentEnergy;
-    private bool start_Timer3;
+    private bool start_Timer1;
     private bool isEnergyMove;
+    private bool plusSwitch1;
 
 
     void Start()
@@ -64,8 +65,9 @@ public class playerController : MonoBehaviour
 
         // 載入全域變數
         currentEnergy = energyCollect.currentEnergy;
-        start_Timer3 = energyCollect.start_Timer3;
+        start_Timer1 = energyCollect.start_Timer1;
         isEnergyMove = energyCollect.isEnergyMove;
+        plusSwitch1 = DesotybottomLine.plusSwitch1;
 
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         scale = transform.localScale;
@@ -231,10 +233,12 @@ public class playerController : MonoBehaviour
     IEnumerator waitDestory()
     {
         yield return new WaitForSeconds(waitdes);
+        plusSwitch1 = true;
+        DesotybottomLine.plusSwitch1 = plusSwitch1;
         des.destoryline();
         yield return new WaitForSeconds(7);
-        start_Timer3 = true;
-        energyCollect.start_Timer3 = start_Timer3;
+        start_Timer1 = true;
+        energyCollect.start_Timer1 = start_Timer1;
         yield return new WaitForSeconds(3);
         isEnergyMove = true;
         energyCollect.isEnergyMove = isEnergyMove;
