@@ -10,7 +10,7 @@ public class playerController : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("音樂")]
-    public AudioSource red1, red2;
+    public AudioSource red1, red2 ,s_dead;
     [Header("計時")]
     float timer, beatime, uptime;
     public float Bpm, waitdes , sm_time1 ,sm_time2;
@@ -41,6 +41,7 @@ public class playerController : MonoBehaviour
     int dead;
 
     [Header("分數")]
+    public GameObject learn;
     public float maxScore = 100000;
     public GameObject endg;
 
@@ -87,7 +88,11 @@ public class playerController : MonoBehaviour
         if (Status == playermove.red1)
         {
             StartCoroutine(r1Musicplay(sm_time1));
-        }     
+        }
+        if (Status == playermove.red2)
+        {
+            StartCoroutine(learn2());
+        }        
     }
 
     // Update is called once per frame
@@ -100,7 +105,7 @@ public class playerController : MonoBehaviour
             red_control();
         }
         else if (Status == playermove.red2)
-        {
+        {            
             red2_control();
             red2gravity();
             if (timer >= beatime)
@@ -124,14 +129,7 @@ public class playerController : MonoBehaviour
     void red_control()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow) && pos < 2)
-        {
-            //transform.DOBlendableMoveBy(new Vector3( 4,0 ,0), 0.1f);
-            //pos++;
-            //DOTween.To(() => dolly.m_PathPosition, x => dolly.m_PathPosition = x, dolly.m_PathPosition = 0f, 0.1f);
-            //ani.SetBool("Right", true);
-            //ani.SetBool("Left", false);
-            //ani.SetBool("End", false);
-            //Invoke("restore", 0.5f);
+        {            
             StartCoroutine(goright());
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) && pos > -2) 
@@ -222,6 +220,13 @@ public class playerController : MonoBehaviour
     {
         StartCoroutine(changered2(0.5f)); 
     }
+    IEnumerator learn2()
+    {
+        yield return new WaitForSeconds(3);
+        learn.transform.DOScaleX(1, 0.3f);
+        yield return new WaitForSeconds(3);        
+        learn.transform.DOScaleX(0, 0.3f);
+    }
     IEnumerator changered2(float time)
     {
         red1.Stop();
@@ -238,6 +243,9 @@ public class playerController : MonoBehaviour
     }
     IEnumerator r1Musicplay(float time)
     {
+        learn.transform.DOScaleX(1, 0.3f);
+        yield return new WaitUntil(() => Input.anyKeyDown);
+        learn.transform.DOScaleX(0, 0.3f);
         yield return new WaitForSeconds(time);
         go_foword();
     }
@@ -266,6 +274,7 @@ public class playerController : MonoBehaviour
         transform.GetComponent<MeshRenderer>().enabled = false;
         transform.GetComponent<BoxCollider>().enabled = false;
         red2.Stop();
+        s_dead.Play();
         Instantiate(deathPs, transform);
         endGame = true;
         endContral.endGame = endGame;
@@ -281,6 +290,7 @@ public class playerController : MonoBehaviour
         transform.DOKill();
         transform.GetComponent<Rigidbody>().isKinematic = true;
         red1.Stop();
+        s_dead.Play();
         Instantiate(deathPs, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         endGame = true;
         endContral.endGame = endGame;

@@ -8,6 +8,7 @@ public class DesotybottomLine : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool go;
+    public AudioSource ad;
     public GameObject one ,tetris;
     public float falltime , waittime;
     float timer;
@@ -67,6 +68,7 @@ public class DesotybottomLine : MonoBehaviour
                 {
                     Debug.DrawLine(ray.origin, hit.point, Color.red);
                     hit.transform.parent = transform.GetChild(0);
+                    ad.Play();
                 }
             }
 
