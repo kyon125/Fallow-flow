@@ -66,6 +66,11 @@ public class endContral : MonoBehaviour
         }
 
         scoreText.text = (int)currentScore + "";
-        PlayerPrefs.SetInt("Score", (int)currentScore);
+
+        int i = PlayerPrefs.GetInt("s1_Score");
+        if (i < (int)currentScore)
+        {
+            PlayerPrefs.SetInt("s1_Score", (int)currentScore);
+        }
     }
 }
