@@ -9653,7 +9653,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cf315807b13a93c498546027df2b5325, type: 2}
+  - {fileID: 2100000, guid: 5abc1ed9f24a3374884aa5999f951592, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9744,7 +9744,7 @@ GameObject:
   - component: {fileID: 778458665690291863}
   - component: {fileID: 778458665690291862}
   m_Layer: 0
-  m_Name: laser 1
+  m_Name: S3_g_lay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
