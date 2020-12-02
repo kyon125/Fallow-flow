@@ -47,12 +47,18 @@ public class playerControllerS2 : MonoBehaviour
     public EnergyBar energyBar;
     public int maxEnergy = 72;
     public int resetEnergy = 0;
-   
+
+    [Header("分數")]
+    public float maxScore = 100000;
+    public GameObject endg;
+
     // 外部參數
     private int currentEnergy;
     private bool start_Timer2;
     private bool isEnergyMove;
     private bool plusSwitch2;
+    private float currentScore;
+    private bool endGame;
 
 
     int layerMask = 1 << 8;
@@ -71,6 +77,11 @@ public class playerControllerS2 : MonoBehaviour
         start_Timer2 = energyCollect.start_Timer2;
         isEnergyMove = energyCollect.isEnergyMove;
         plusSwitch2 = DesotybottomLine.plusSwitch2;
+        currentScore = endContral.currentScore;
+        endGame = endContral.endGame;
+
+        // 分數
+        currentScore = 0;
 
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         render = transform.GetComponent<SkinnedMeshRenderer>();
@@ -296,7 +307,12 @@ public class playerControllerS2 : MonoBehaviour
         yield return new WaitForSeconds(3);
         isEnergyMove = true;
         energyCollect.isEnergyMove = isEnergyMove;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
+        endGame = true;
+        endContral.endGame = endGame;
+        yield return new WaitForSeconds(1);
+        endg.SetActive(true);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("mainmenu");
     }
     IEnumerator waitDeath()
@@ -306,7 +322,11 @@ public class playerControllerS2 : MonoBehaviour
         red2.Stop();
         s_dead.Play();
         Instantiate(deathPs, transform);
-        yield return new WaitForSeconds(3f);
+        endGame = true;
+        endContral.endGame = endGame;
+        yield return new WaitForSeconds(1);
+        endg.SetActive(true);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("End");
     }
     IEnumerator waitDeaththird()
@@ -318,7 +338,11 @@ public class playerControllerS2 : MonoBehaviour
         red1.Stop();
         s_dead.Play();
         Instantiate(deathPs, new Vector3(transform.position.x ,transform.position.y , transform.position.z) ,Quaternion.identity);
-        yield return new WaitForSeconds(3f);
+        endGame = true;
+        endContral.endGame = endGame;
+        yield return new WaitForSeconds(1);
+        endg.SetActive(true);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("End");
     }
     IEnumerator goleft()
@@ -367,6 +391,12 @@ public class playerControllerS2 : MonoBehaviour
     {
         if (other.gameObject.tag == "energy")
         {
+            if (currentScore < maxScore)
+            {
+                currentScore += 35000 / 72;
+                endContral.currentScore = currentScore;
+            }
+
             if (currentEnergy < maxEnergy)
             {
                 currentEnergy = currentEnergy + 1;

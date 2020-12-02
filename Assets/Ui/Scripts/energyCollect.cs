@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class energyCollect : MonoBehaviour
 {
     public EnergyBar energyBar;
-    public static int currentEnergy = 80;
+    public static int currentEnergy = 0;
 
     public GameObject R;
 
