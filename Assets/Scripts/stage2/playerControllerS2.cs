@@ -9,7 +9,7 @@ public class playerControllerS2 : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("音樂")]
-    public AudioSource red1, red2;
+    public AudioSource red1, red2 ,s_dead;
     [Header("計時")]
     float timer, beatime, uptime;
     public float Bpm, waitdes, sm_time1, sm_time2;
@@ -41,6 +41,7 @@ public class playerControllerS2 : MonoBehaviour
     public int colornum;
     public gameColor color;
     public Playecolor playecolor;
+    public GameObject learn;
 
     [Header("能量")]
     public EnergyBar energyBar;
@@ -277,7 +278,10 @@ public class playerControllerS2 : MonoBehaviour
     }
     IEnumerator r1Musicplay(float time)
     {
+        learn.transform.DOScaleX(1, 0.3f);      
+        
         yield return new WaitForSeconds(time);
+        learn.transform.DOScaleX(0, 0.3f);
         go_foword();
     }
     IEnumerator waitDestory()
@@ -300,6 +304,7 @@ public class playerControllerS2 : MonoBehaviour
         transform.GetComponent<MeshRenderer>().enabled = false;
         transform.GetComponent<BoxCollider>().enabled = false;
         red2.Stop();
+        s_dead.Play();
         Instantiate(deathPs, transform);
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("End");
@@ -311,7 +316,8 @@ public class playerControllerS2 : MonoBehaviour
         transform.DOKill();
         transform.GetComponent<Rigidbody>().isKinematic = true;
         red1.Stop();
-        Instantiate(deathPs, new Vector3(transform.position.x + 6.54f ,transform.position.y , transform.position.z) ,Quaternion.identity);
+        s_dead.Play();
+        Instantiate(deathPs, new Vector3(transform.position.x ,transform.position.y , transform.position.z) ,Quaternion.identity);
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("End");
     }

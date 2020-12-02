@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class endContral : MonoBehaviour
 {
@@ -12,10 +13,11 @@ public class endContral : MonoBehaviour
 
     public static float currentScore;
     public Text scoreText;
+    Scene scene;
     // Start is called before the first frame update
     void Start()
     {
-
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -67,10 +69,30 @@ public class endContral : MonoBehaviour
 
         scoreText.text = (int)currentScore + "";
 
-        int i = PlayerPrefs.GetInt("s1_Score");
-        if (i < (int)currentScore)
+        if (scene.name == "s1")
         {
-            PlayerPrefs.SetInt("s1_Score", (int)currentScore);
+            int i = PlayerPrefs.GetInt("s1_Score");
+            if (i < (int)currentScore)
+            {
+                PlayerPrefs.SetInt("s1_Score", (int)currentScore);
+            }
         }
+        else if (scene.name == "s2")
+        {
+            int i = PlayerPrefs.GetInt("s2_Score");
+            if (i < (int)currentScore)
+            {
+                PlayerPrefs.SetInt("s2_Score", (int)currentScore);
+            }
+        }
+        else if (scene.name == "s3")
+        {
+            int i = PlayerPrefs.GetInt("s3_Score");
+            if (i < (int)currentScore)
+            {
+                PlayerPrefs.SetInt("s3_Score", (int)currentScore);
+            }
+        }
+
     }
 }
