@@ -130,6 +130,14 @@ public class playerControllerS2 : MonoBehaviour
         {
 
         }
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            transform.GetComponent<BoxCollider>().enabled = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.F12))
+        {
+            transform.GetComponent<BoxCollider>().enabled = true;
+        }
 
     }
     void ground()

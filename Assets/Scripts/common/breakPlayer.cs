@@ -22,8 +22,16 @@ public class breakPlayer : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 6f) && hit.transform.name == "Player")
             {
-                hit.transform.GetComponent<playerController>().Status = playerController.playermove.death;
-                hit.transform.GetComponent<playerController>().forDeath();
+                if (scene.name == "s1")
+                {
+                    hit.transform.GetComponent<playerController>().Status = playerController.playermove.death;
+                    hit.transform.GetComponent<playerController>().forDeath();
+                }
+                else if (scene.name == "s2")
+                {
+                    hit.transform.GetComponent<playerControllerS2>().Status = playerControllerS2.playermove.death;
+                    hit.transform.GetComponent<playerControllerS2>().forDeath();
+                }                
             }
         }              
     }
