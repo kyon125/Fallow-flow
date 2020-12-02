@@ -14,8 +14,12 @@ public class DesotybottomLine : MonoBehaviour
     bool clear, godown;
     int count;
     Scene scene;
-
+    
+    // 外部參數
     private int currentEnergy;
+    private float currentScore;
+
+
     public static bool plusSwitch1=false;
     public static bool plusSwitch2=false;
 
@@ -25,6 +29,7 @@ public class DesotybottomLine : MonoBehaviour
 
           // 載入全域變數
         currentEnergy = energyCollect.currentEnergy;
+        currentScore = endContral.currentScore;
     }
 
     // Update is called once per frame
@@ -71,20 +76,25 @@ public class DesotybottomLine : MonoBehaviour
             if (currentEnergy < 133 && plusSwitch1)
             {
                 currentEnergy = currentEnergy + 7;
+                currentScore = currentScore + 65000/15;
             }
             else if (currentEnergy >= 133 && plusSwitch1)
             {
                 currentEnergy = 133;
+                currentScore = currentScore + 65000 / 15;
             }
             else if (currentEnergy < 72 && plusSwitch2) 
             {
                 currentEnergy = currentEnergy + 5;
+                currentScore = currentScore + 65000 / 15;
             }
             else if (currentEnergy >= 72 && plusSwitch2) 
             {
                 currentEnergy = 72;
+                currentScore = currentScore + 65000 / 15;
             }
             energyCollect.currentEnergy = currentEnergy;
+            endContral.currentScore = currentScore;
 
             timer = 0;
             clear = true;
