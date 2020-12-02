@@ -5,19 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class changeStage : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
     Scene scene;
+
     void Start()
     {
         scene = SceneManager.GetActiveScene();
         print(scene.name);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" &&  scene.name == "s1" )
@@ -33,7 +29,7 @@ public class changeStage : MonoBehaviour
         else if (other.gameObject.tag == "Player" && scene.name == "s3")
         {
             print("aa");
-            other.gameObject.GetComponent<playerControllerS3>().goTored2();
+            other.gameObject.GetComponent<playerControllerS3>().goTored2();           
         }
-    }
+    } 
 }

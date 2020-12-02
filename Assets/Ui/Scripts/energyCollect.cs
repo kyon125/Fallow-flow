@@ -186,7 +186,7 @@ public class energyCollect : MonoBehaviour
     // S3縮條
     IEnumerator timer3()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         timer_i++;
         start_Timer3 = true;
 
@@ -255,9 +255,9 @@ public class energyCollect : MonoBehaviour
         {
             aPos += new Vector2(-37, -39.5f);
         }
-        else if (aPos.x >= 1400 && aPos.y >= 770 && moveSwitch3)
+        else if (aPos.x >= 1437 && aPos.y >= 800 && moveSwitch3)
         {
-            aPos += new Vector2(-37, -39.5f);
+            aPos += new Vector2(-74 , -81.8f);
         }
         else
         {

@@ -63,6 +63,7 @@ public class playerControllerS3 : MonoBehaviour
     public GameObject deathPs;
 
     int dead;
+
     void Start()
     {
         // 載入全域變數
@@ -76,6 +77,7 @@ public class playerControllerS3 : MonoBehaviour
         currentEnergy = resetEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
         energyBar.SetResetEnergy(resetEnergy);
+  
 
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         render = transform.GetComponent<SkinnedMeshRenderer>();
@@ -248,6 +250,9 @@ public class playerControllerS3 : MonoBehaviour
     }
     public void goWin()
     {
+        currentScore += 50000;
+        endContral.currentScore = currentScore;
+
         StartCoroutine(Win(0.5f));
     }
     IEnumerator Win(float time)
@@ -285,18 +290,7 @@ public class playerControllerS3 : MonoBehaviour
     {
         yield return new WaitForSeconds(waitdes);
         des.destoryline();
-        yield return new WaitForSeconds(7);
-        start_Timer3 = true;
-        energyCollect.start_Timer1 = start_Timer3;
-        yield return new WaitForSeconds(3);
-        isEnergyMove = true;
-        energyCollect.isEnergyMove = isEnergyMove;
-        yield return new WaitForSeconds(2);
-        endGame = true;
-        endContral.endGame = endGame;
-        yield return new WaitForSeconds(1);
-        endg.SetActive(true);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(10);      
         SceneManager.LoadScene("mainmenu");
     }
     IEnumerator waitDeath()
@@ -383,7 +377,12 @@ public class playerControllerS3 : MonoBehaviour
 
             if (currentEnergy < maxEnergy)
             {
-                currentEnergy = currentEnergy + 1;
+                currentEnergy = currentEnergy + 2;
+                energyCollect.currentEnergy = currentEnergy;
+            }
+            else if (currentEnergy >= maxEnergy)
+            {
+                currentEnergy = maxEnergy;
                 energyCollect.currentEnergy = currentEnergy;
             }
         }
