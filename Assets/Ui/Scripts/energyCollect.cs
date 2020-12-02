@@ -45,7 +45,7 @@ public class energyCollect : MonoBehaviour
 
             StartCoroutine("timer1");
             start_Timer1 = false;
-            Debug.Log(timer_i);
+            //Debug.Log(timer_i);
         }
 
         if (start_Timer2)
@@ -54,10 +54,10 @@ public class energyCollect : MonoBehaviour
 
             StartCoroutine("timer2");
             start_Timer2 = false;
-            Debug.Log(timer_i);
+            //Debug.Log(timer_i);
         }
 
-        print(currentEnergy);
+        print("Energy : "+currentEnergy);
     }
 
     // S1縮條
@@ -84,8 +84,7 @@ public class energyCollect : MonoBehaviour
                 start_Timer1 = false;
             }
 
-
-            print("目前能量:" + currentEnergy);
+         //print("目前能量:" + currentEnergy);
         }
 
 
@@ -141,7 +140,7 @@ public class energyCollect : MonoBehaviour
             }
 
 
-            print("目前能量:" + currentEnergy);
+            //print("目前能量:" + currentEnergy);
         }
 
 
