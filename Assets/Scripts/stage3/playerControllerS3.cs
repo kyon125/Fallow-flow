@@ -29,6 +29,7 @@ public class playerControllerS3 : MonoBehaviour
     public Material m_normal;
     public Material m_green;
     public Material m_red;
+    public MeshRenderer m_render;
     SkinnedMeshRenderer render;
     [Header("相機")]
     public Camera main;
@@ -63,13 +64,7 @@ public class playerControllerS3 : MonoBehaviour
         {
             songtime = PlayerPrefs.GetFloat("songtime");
             red1.Play();
-            red1.time = 46;
-        }
-        else if (Status == playermove.inpass)
-        {
-            songtime = PlayerPrefs.GetFloat("songtime");
-            red1.Play();
-            red1.time = songtime-3;
+            red1.time = songtime;
         }
     }
 
@@ -85,11 +80,15 @@ public class playerControllerS3 : MonoBehaviour
         else if (Status == playermove.red2)
         {
             red2_control();
-            //red2gravity();
             if (timer >= beatime)
             {
                 timer = timer - beatime;
-            }            
+            }
+            if (red1.time >= 163)
+            {
+                goWin();
+                Status = playermove.death;
+            }
         }
         else if (Status == playermove.red2crash)
         {
@@ -172,49 +171,26 @@ public class playerControllerS3 : MonoBehaviour
             playecolor = Playecolor.blue;
             render.material = m_normal;
         }
-        //if (colornum == 0)
-        //{
-        //    color = gameColor.blue;
-        //    playecolor = Playecolor.blue;
-        //    render.material = m_normal;
-        //    //redObj.SetActive(true);
-        //    //greenObj.SetActive(false);
-        //    //blueobj.SetActive(false);            
-        //}
-        //else if (colornum == 1)
-        //{
-            
-        //    //redObj.SetActive(false);
-        //    //greenObj.SetActive(false);
-        //    //blueobj.SetActive(true);
-        //}
-        //else if (colornum == 2)
-        //{
-        //    color = gameColor.green;
-        //    playecolor = Playecolor.green;
-        //    render.material = m_green;
-        //    //redObj.SetActive(false);
-        //    //greenObj.SetActive(true);
-        //    //blueobj.SetActive(false);
-        //}
     }
     void conColor()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && colornum > 0)
-        {
-            colornum--;
-        }
-        else if (Input.GetKeyDown(KeyCode.C) && colornum < 1)
-        {
-            colornum++;
-        }
-        if (colornum == 0)
-        {
-            color = gameColor.green;
-        }
-        else if (colornum == 1)
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             color = gameColor.red;
+            playecolor = Playecolor.red;
+            m_render.material = m_red;
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            color = gameColor.green;
+            playecolor = Playecolor.green;
+            m_render.material = m_green;
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            color = gameColor.blue;
+            playecolor = Playecolor.blue;
+            m_render.material = m_normal;
         }
     }
     public void go_foword()
@@ -243,6 +219,15 @@ public class playerControllerS3 : MonoBehaviour
     public void goTored2()
     {
         StartCoroutine(changered2(0.5f));
+    }
+    public void goWin()
+    {
+        StartCoroutine(Win(0.5f));
+    }
+    IEnumerator Win(float time)
+    {
+        red1.Stop();
+        yield return new WaitForSeconds(time);
     }
     IEnumerator changered2(float time)
     {

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2125334928048353170}
   - component: {fileID: 2125334928048353169}
   m_Layer: 0
-  m_Name: laser 1
+  m_Name: s3_layser_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9649,7 +9649,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: afd5bb35ce90c414e9bb4a24ccae0440, type: 2}
+  - {fileID: 2100000, guid: fce6f27c246fb4446a6f12afef8fc08f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
