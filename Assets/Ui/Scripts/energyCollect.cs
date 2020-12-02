@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class energyCollect : MonoBehaviour
 {
     public EnergyBar energyBar;
-    public static int currentEnergy = 0;
+    public static int currentEnergy = 80;
 
     public GameObject R;
 
@@ -20,10 +20,12 @@ public class energyCollect : MonoBehaviour
 
     public static bool start_Timer1 = false;
     public static bool start_Timer2 = false;
+    public static bool start_Timer3 = false;
     public static bool isEnergyMove = false;
 
     private bool moveSwitch1 = false;
     private bool moveSwitch2 = false;
+    private bool moveSwitch3 = false;
     private void Start()
     {
         rFill_c.GetComponent<Renderer>();
@@ -57,7 +59,17 @@ public class energyCollect : MonoBehaviour
             //Debug.Log(timer_i);
         }
 
+        if (start_Timer3)
+        {
+            moveSwitch3 = true;
+
+            StartCoroutine("timer3");
+            start_Timer3 = false;
+            //Debug.Log(timer_i);
+        }
+
         print("Energy : "+currentEnergy);
+        print(moveSwitch3);
     }
 
     // S1縮條
@@ -165,11 +177,68 @@ public class energyCollect : MonoBehaviour
         else if (energyBar.slider.value == 16)
         {
             R.transform.position += new Vector3(-103, 0, 0);
-
+            start_Timer2 = false;
         }
 
         energyBar.SetEnergy(currentEnergy);
     }
+
+    // S3縮條
+    IEnumerator timer3()
+    {
+        yield return new WaitForSeconds(1);
+        timer_i++;
+        start_Timer3 = true;
+
+        if (currentEnergy == 100)
+        {
+            rFill.SetActive(true);
+            rFill_c.color = Color.blue;
+        }
+
+        if (currentEnergy > 0 && currentEnergy <= 100)
+        {
+            currentEnergy -= 18;
+
+            if (currentEnergy < 0)
+            {
+                currentEnergy = 0;
+                start_Timer3 = false;
+
+            }
+
+
+            //print("目前能量:" + currentEnergy);
+        }
+
+
+        if (energyBar.slider.value == 82)
+        {
+            R.transform.position += new Vector3(-103, 0, 0);
+
+            energyLine.SetEnergy(2);
+        }
+        else if (energyBar.slider.value == 64)
+        {
+            R.transform.position += new Vector3(-103, 0, 0);
+
+            energyLine.SetEnergy(1);
+        }
+        else if (energyBar.slider.value == 46)
+        {
+            R.transform.position += new Vector3(-103, 0, 0);
+
+            energyLine.SetEnergy(0);
+        }
+        else if (energyBar.slider.value == 28)
+        {
+            R.transform.position += new Vector3(-103, 0, 0);
+            start_Timer3 = false;
+        }
+
+        energyBar.SetEnergy(currentEnergy);
+    }
+
 
     IEnumerator energyMove()
     {
@@ -186,10 +255,14 @@ public class energyCollect : MonoBehaviour
         {
             aPos += new Vector2(-37, -39.5f);
         }
+        else if (aPos.x >= 1400 && aPos.y >= 770 && moveSwitch3)
+        {
+            aPos += new Vector2(-37, -39.5f);
+        }
         else
         {
             isEnergyMove = false;
-            start_Timer2 = false;
+            
         }
 
         rectTransform.transform.position = aPos;

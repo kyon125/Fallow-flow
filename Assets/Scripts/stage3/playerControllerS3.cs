@@ -43,14 +43,40 @@ public class playerControllerS3 : MonoBehaviour
     public int colornum = 1;
     public gameColor color;
     public Playecolor playecolor;
+    [Header("分數")]
+    public float maxScore = 100000;
+    public GameObject endg;
+    [Header("能量")]
+    public EnergyBar energyBar;
+    public int maxEnergy = 100;
+    public int resetEnergy = 0;
 
+    // 外部參數
+    private int currentEnergy;
+    private bool start_Timer3;
+    private bool isEnergyMove;
+    private float currentScore;
+    private bool endGame;
 
     int layerMask = 1 << 8;
     public DesotybottomLine des;
     public GameObject deathPs;
+
     int dead;
     void Start()
     {
+        // 載入全域變數
+        currentEnergy = energyCollect.currentEnergy;
+        start_Timer3 = energyCollect.start_Timer3;
+        isEnergyMove = energyCollect.isEnergyMove;
+        currentScore = endContral.currentScore;
+        endGame = endContral.endGame;
+
+        // 能量
+        currentEnergy = resetEnergy;
+        energyBar.SetMaxEnergy(maxEnergy);
+        energyBar.SetResetEnergy(resetEnergy);
+
         dolly = cine.GetCinemachineComponent<CinemachineTrackedDolly>();
         render = transform.GetComponent<SkinnedMeshRenderer>();
         scale = transform.localScale;
@@ -259,7 +285,18 @@ public class playerControllerS3 : MonoBehaviour
     {
         yield return new WaitForSeconds(waitdes);
         des.destoryline();
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(7);
+        start_Timer3 = true;
+        energyCollect.start_Timer1 = start_Timer3;
+        yield return new WaitForSeconds(3);
+        isEnergyMove = true;
+        energyCollect.isEnergyMove = isEnergyMove;
+        yield return new WaitForSeconds(2);
+        endGame = true;
+        endContral.endGame = endGame;
+        yield return new WaitForSeconds(1);
+        endg.SetActive(true);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("mainmenu");
     }
     IEnumerator waitDeath()
@@ -267,8 +304,11 @@ public class playerControllerS3 : MonoBehaviour
         transform.GetComponent<MeshRenderer>().enabled = false;
         transform.GetComponent<BoxCollider>().enabled = false;
         red2.Stop();
-        Instantiate(deathPs, transform);
-        yield return new WaitForSeconds(3f);
+        Instantiate(deathPs, transform); endGame = true;
+        endContral.endGame = endGame;
+        yield return new WaitForSeconds(1);
+        endg.SetActive(true);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("End");
     }
     IEnumerator waitDeaththird()
@@ -279,7 +319,11 @@ public class playerControllerS3 : MonoBehaviour
         transform.GetComponent<Rigidbody>().isKinematic = true;
         red1.Stop();
         Instantiate(deathPs, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        yield return new WaitForSeconds(3f);
+        endGame = true;
+        endContral.endGame = endGame;
+        yield return new WaitForSeconds(1);
+        endg.SetActive(true);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("End");
     }
     IEnumerator goleft()
@@ -325,5 +369,23 @@ public class playerControllerS3 : MonoBehaviour
         red,
         green,
         blue
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "energy")
+        {
+            if (currentScore < maxScore)
+            {
+                currentScore += 50000 / 78;
+                endContral.currentScore = currentScore;
+            }
+
+            if (currentEnergy < maxEnergy)
+            {
+                currentEnergy = currentEnergy + 1;
+                energyCollect.currentEnergy = currentEnergy;
+            }
+        }
     }
 }
